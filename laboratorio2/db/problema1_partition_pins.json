@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sieteSegmentos0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "entradaBinario[0]",
+					"strict" : false
+				},
+				{
+					"name" : "entradaBinario[1]",
+					"strict" : false
+				},
+				{
+					"name" : "entradaBinario[3]",
+					"strict" : false
+				},
+				{
+					"name" : "entradaBinario[2]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

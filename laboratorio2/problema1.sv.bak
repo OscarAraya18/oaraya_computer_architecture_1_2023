@@ -1,0 +1,3 @@
+module moduloConvertidorBinarioBCD(entradaBinario, salidaBCD);
+
+endmodule 
