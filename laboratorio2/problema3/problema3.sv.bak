@@ -1,0 +1,3 @@
+module problema3 (entradaAumentar, entradaIniciarCuenta, entradaDecrecer, reinicio, sieteSegmentos0, sieteSegmentos1, sieteSegmentos2, sieteSegmentos3, sieteSegmentos4, sieteSegmentos5);
+
+endmodule 

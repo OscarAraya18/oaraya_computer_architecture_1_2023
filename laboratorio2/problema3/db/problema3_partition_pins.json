@@ -1,0 +1,41 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sieteSegmentos0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "entradaAumentar",
+					"strict" : false
+				},
+				{
+					"name" : "entradaIniciarCuenta",
+					"strict" : false
+				},
+				{
+					"name" : "entradaDecrecer",
+					"strict" : false
+				},
+				{
+					"name" : "reinicio",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
