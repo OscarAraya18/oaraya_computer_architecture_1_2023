@@ -7,7 +7,7 @@ module moduloDisplayBCDSieteSegmentos(entradaBCD, sieteSegmentos0, sieteSegmento
 	output logic [6:0] sieteSegmentos3;
 	output logic [6:0] sieteSegmentos4;
 	
-	always @(entradaBCD) begin
+	always_comb begin
 		if (entradaBCD[0] == 1'b0) sieteSegmentos0 = 7'b0000001;
 		else sieteSegmentos0 = 7'b1001111;
 		
