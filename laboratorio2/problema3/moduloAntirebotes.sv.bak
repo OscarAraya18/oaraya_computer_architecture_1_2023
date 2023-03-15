@@ -1,0 +1,4 @@
+module moduloAntirebotes (clock, reset, entradaBoton, salidaBoton);
+	input logic clock;
+
+endmodule 

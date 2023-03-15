@@ -4,11 +4,7 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "sieteSegmentos0[1]",
-					"strict" : false
-				},
-				{
-					"name" : "sieteSegmentos0[2]",
+					"name" : "sieteSegmentos0[0]",
 					"strict" : false
 				},
 				{
@@ -16,7 +12,95 @@
 					"strict" : false
 				},
 				{
-					"name" : "sieteSegmentos0[6]",
+					"name" : "sieteSegmentos0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "reinicio",
 					"strict" : false
 				},
 				{
@@ -24,15 +108,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "entradaIniciarCuenta",
-					"strict" : false
-				},
-				{
 					"name" : "entradaDecrecer",
 					"strict" : false
 				},
 				{
-					"name" : "reinicio",
+					"name" : "entradaIniciarCuenta",
 					"strict" : false
 				}
 			]

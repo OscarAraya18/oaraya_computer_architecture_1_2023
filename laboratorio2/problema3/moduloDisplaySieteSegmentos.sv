@@ -8,18 +8,18 @@ module moduloDisplaySieteSegmentos (entradaContador, sieteSegmentos0, sieteSegme
 	output logic [6:0] sieteSegmentos5;
 
 	always @(entradaContador) begin
-		if (entradaContador[0] == 1'b0) sieteSegmentos0 = 7'b0000001;
-		else sieteSegmentos0 = 7'b1001111;
-		if (entradaContador[1] == 1'b0) sieteSegmentos1 = 7'b0000001;
-		else sieteSegmentos0 = 7'b1001111;
-		if (entradaContador[2] == 1'b0) sieteSegmentos2 = 7'b0000001;
-		else sieteSegmentos0 = 7'b1001111;
-		if (entradaContador[3] == 1'b0) sieteSegmentos3 = 7'b0000001;
-		else sieteSegmentos0 = 7'b1001111;
-		if (entradaContador[4] == 1'b0) sieteSegmentos4 = 7'b0000001;
-		else sieteSegmentos0 = 7'b1001111;
-		if (entradaContador[5] == 1'b0) sieteSegmentos5 = 7'b0000001;
-		else sieteSegmentos0 = 7'b1001111;
+		if (entradaContador[0] == 1'b0) sieteSegmentos0 = 7'b1000000;
+		else sieteSegmentos0 = 7'b1111001;
+		if (entradaContador[1] == 1'b0) sieteSegmentos1 = 7'b1000000;
+		else sieteSegmentos1 = 7'b1111001;
+		if (entradaContador[2] == 1'b0) sieteSegmentos2 = 7'b1000000;
+		else sieteSegmentos2 = 7'b1111001;
+		if (entradaContador[3] == 1'b0) sieteSegmentos3 = 7'b1000000;
+		else sieteSegmentos3 = 7'b1111001;
+		if (entradaContador[4] == 1'b0) sieteSegmentos4 = 7'b1000000;
+		else sieteSegmentos4 = 7'b1111001;
+		if (entradaContador[5] == 1'b0) sieteSegmentos5 = 7'b1000000;
+		else sieteSegmentos5 = 7'b1111001;
 	end
 
 endmodule 

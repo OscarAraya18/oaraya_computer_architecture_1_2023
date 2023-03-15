@@ -1,0 +1,1385 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
+
+// DATE "03/15/2023 10:25:32"
+
+// 
+// Device: Altera 5CSEMA5F31C6 Package FBGA896
+// 
+
+// 
+// This Verilog file should be used for ModelSim (SystemVerilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module problema3 (
+	entradaAumentar,
+	entradaIniciarCuenta,
+	entradaDecrecer,
+	reloj,
+	reinicio,
+	sieteSegmentos0,
+	sieteSegmentos1,
+	sieteSegmentos2,
+	sieteSegmentos3,
+	sieteSegmentos4,
+	sieteSegmentos5);
+input 	entradaAumentar;
+input 	entradaIniciarCuenta;
+input 	entradaDecrecer;
+input 	reloj;
+input 	reinicio;
+output 	[6:0] sieteSegmentos0;
+output 	[6:0] sieteSegmentos1;
+output 	[6:0] sieteSegmentos2;
+output 	[6:0] sieteSegmentos3;
+output 	[6:0] sieteSegmentos4;
+output 	[6:0] sieteSegmentos5;
+
+// Design Ports Information
+// reloj	=>  Location: PIN_AF14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos0[0]	=>  Location: PIN_AE26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos0[1]	=>  Location: PIN_AE27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos0[2]	=>  Location: PIN_AE28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos0[3]	=>  Location: PIN_AG27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos0[4]	=>  Location: PIN_AF28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos0[5]	=>  Location: PIN_AG28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos0[6]	=>  Location: PIN_AH28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos1[0]	=>  Location: PIN_AJ29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos1[1]	=>  Location: PIN_AH29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos1[2]	=>  Location: PIN_AH30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos1[3]	=>  Location: PIN_AG30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos1[4]	=>  Location: PIN_AF29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos1[5]	=>  Location: PIN_AF30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos1[6]	=>  Location: PIN_AD27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos2[0]	=>  Location: PIN_AB23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos2[1]	=>  Location: PIN_AE29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos2[2]	=>  Location: PIN_AD29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos2[3]	=>  Location: PIN_AC28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos2[4]	=>  Location: PIN_AD30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos2[5]	=>  Location: PIN_AC29,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos2[6]	=>  Location: PIN_AC30,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos3[0]	=>  Location: PIN_AD26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos3[1]	=>  Location: PIN_AC27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos3[2]	=>  Location: PIN_AD25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos3[3]	=>  Location: PIN_AC25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos3[4]	=>  Location: PIN_AB28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos3[5]	=>  Location: PIN_AB25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos3[6]	=>  Location: PIN_AB22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos4[0]	=>  Location: PIN_AA24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos4[1]	=>  Location: PIN_Y23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos4[2]	=>  Location: PIN_Y24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos4[3]	=>  Location: PIN_W22,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos4[4]	=>  Location: PIN_W24,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos4[5]	=>  Location: PIN_V23,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos4[6]	=>  Location: PIN_W25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos5[0]	=>  Location: PIN_V25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos5[1]	=>  Location: PIN_AA28,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos5[2]	=>  Location: PIN_Y27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos5[3]	=>  Location: PIN_AB27,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos5[4]	=>  Location: PIN_AB26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos5[5]	=>  Location: PIN_AA26,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// sieteSegmentos5[6]	=>  Location: PIN_AA25,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// reinicio	=>  Location: PIN_Y16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// entradaAumentar	=>  Location: PIN_AA14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// entradaDecrecer	=>  Location: PIN_AA15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// entradaIniciarCuenta	=>  Location: PIN_W15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \reloj~input_o ;
+wire \~QUARTUS_CREATED_GND~I_combout ;
+wire \reinicio~input_o ;
+wire \entradaIniciarCuenta~input_o ;
+wire \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0_combout ;
+wire \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ;
+wire \entradaAumentar~input_o ;
+wire \entradaDecrecer~input_o ;
+wire \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0_combout ;
+wire \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout ;
+wire \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0_combout ;
+wire \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout ;
+wire \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ;
+wire \instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~22_cout ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~1_sumout ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~2 ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~5_sumout ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~6 ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~9_sumout ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~10 ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~13_sumout ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~14 ;
+wire \instanciaModuloContadorRegresivoParametrizable|Add0~17_sumout ;
+wire [5:0] \instanciaModuloContadorRegresivoParametrizable|salidaContador ;
+
+
+// Location: IOOBUF_X89_Y8_N39
+cyclonev_io_obuf \sieteSegmentos0[0]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos0[0]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos0[0]~output .bus_hold = "false";
+defparam \sieteSegmentos0[0]~output .open_drain_output = "false";
+defparam \sieteSegmentos0[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y11_N79
+cyclonev_io_obuf \sieteSegmentos0[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos0[1]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos0[1]~output .bus_hold = "false";
+defparam \sieteSegmentos0[1]~output .open_drain_output = "false";
+defparam \sieteSegmentos0[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y11_N96
+cyclonev_io_obuf \sieteSegmentos0[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos0[2]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos0[2]~output .bus_hold = "false";
+defparam \sieteSegmentos0[2]~output .open_drain_output = "false";
+defparam \sieteSegmentos0[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y4_N79
+cyclonev_io_obuf \sieteSegmentos0[3]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos0[3]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos0[3]~output .bus_hold = "false";
+defparam \sieteSegmentos0[3]~output .open_drain_output = "false";
+defparam \sieteSegmentos0[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y13_N56
+cyclonev_io_obuf \sieteSegmentos0[4]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos0[4]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos0[4]~output .bus_hold = "false";
+defparam \sieteSegmentos0[4]~output .open_drain_output = "false";
+defparam \sieteSegmentos0[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y13_N39
+cyclonev_io_obuf \sieteSegmentos0[5]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos0[5]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos0[5]~output .bus_hold = "false";
+defparam \sieteSegmentos0[5]~output .open_drain_output = "false";
+defparam \sieteSegmentos0[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y4_N96
+cyclonev_io_obuf \sieteSegmentos0[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos0[6]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos0[6]~output .bus_hold = "false";
+defparam \sieteSegmentos0[6]~output .open_drain_output = "false";
+defparam \sieteSegmentos0[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y6_N39
+cyclonev_io_obuf \sieteSegmentos1[0]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos1[0]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos1[0]~output .bus_hold = "false";
+defparam \sieteSegmentos1[0]~output .open_drain_output = "false";
+defparam \sieteSegmentos1[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y6_N56
+cyclonev_io_obuf \sieteSegmentos1[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos1[1]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos1[1]~output .bus_hold = "false";
+defparam \sieteSegmentos1[1]~output .open_drain_output = "false";
+defparam \sieteSegmentos1[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y16_N39
+cyclonev_io_obuf \sieteSegmentos1[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos1[2]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos1[2]~output .bus_hold = "false";
+defparam \sieteSegmentos1[2]~output .open_drain_output = "false";
+defparam \sieteSegmentos1[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y16_N56
+cyclonev_io_obuf \sieteSegmentos1[3]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos1[3]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos1[3]~output .bus_hold = "false";
+defparam \sieteSegmentos1[3]~output .open_drain_output = "false";
+defparam \sieteSegmentos1[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y15_N39
+cyclonev_io_obuf \sieteSegmentos1[4]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos1[4]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos1[4]~output .bus_hold = "false";
+defparam \sieteSegmentos1[4]~output .open_drain_output = "false";
+defparam \sieteSegmentos1[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y15_N56
+cyclonev_io_obuf \sieteSegmentos1[5]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos1[5]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos1[5]~output .bus_hold = "false";
+defparam \sieteSegmentos1[5]~output .open_drain_output = "false";
+defparam \sieteSegmentos1[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y8_N56
+cyclonev_io_obuf \sieteSegmentos1[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos1[6]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos1[6]~output .bus_hold = "false";
+defparam \sieteSegmentos1[6]~output .open_drain_output = "false";
+defparam \sieteSegmentos1[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y9_N22
+cyclonev_io_obuf \sieteSegmentos2[0]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos2[0]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos2[0]~output .bus_hold = "false";
+defparam \sieteSegmentos2[0]~output .open_drain_output = "false";
+defparam \sieteSegmentos2[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y23_N39
+cyclonev_io_obuf \sieteSegmentos2[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos2[1]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos2[1]~output .bus_hold = "false";
+defparam \sieteSegmentos2[1]~output .open_drain_output = "false";
+defparam \sieteSegmentos2[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y23_N56
+cyclonev_io_obuf \sieteSegmentos2[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos2[2]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos2[2]~output .bus_hold = "false";
+defparam \sieteSegmentos2[2]~output .open_drain_output = "false";
+defparam \sieteSegmentos2[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y20_N79
+cyclonev_io_obuf \sieteSegmentos2[3]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos2[3]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos2[3]~output .bus_hold = "false";
+defparam \sieteSegmentos2[3]~output .open_drain_output = "false";
+defparam \sieteSegmentos2[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y25_N39
+cyclonev_io_obuf \sieteSegmentos2[4]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos2[4]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos2[4]~output .bus_hold = "false";
+defparam \sieteSegmentos2[4]~output .open_drain_output = "false";
+defparam \sieteSegmentos2[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y20_N96
+cyclonev_io_obuf \sieteSegmentos2[5]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos2[5]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos2[5]~output .bus_hold = "false";
+defparam \sieteSegmentos2[5]~output .open_drain_output = "false";
+defparam \sieteSegmentos2[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y25_N56
+cyclonev_io_obuf \sieteSegmentos2[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos2[6]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos2[6]~output .bus_hold = "false";
+defparam \sieteSegmentos2[6]~output .open_drain_output = "false";
+defparam \sieteSegmentos2[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y16_N5
+cyclonev_io_obuf \sieteSegmentos3[0]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [3]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos3[0]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos3[0]~output .bus_hold = "false";
+defparam \sieteSegmentos3[0]~output .open_drain_output = "false";
+defparam \sieteSegmentos3[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y16_N22
+cyclonev_io_obuf \sieteSegmentos3[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos3[1]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos3[1]~output .bus_hold = "false";
+defparam \sieteSegmentos3[1]~output .open_drain_output = "false";
+defparam \sieteSegmentos3[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y4_N45
+cyclonev_io_obuf \sieteSegmentos3[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos3[2]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos3[2]~output .bus_hold = "false";
+defparam \sieteSegmentos3[2]~output .open_drain_output = "false";
+defparam \sieteSegmentos3[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y4_N62
+cyclonev_io_obuf \sieteSegmentos3[3]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [3]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos3[3]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos3[3]~output .bus_hold = "false";
+defparam \sieteSegmentos3[3]~output .open_drain_output = "false";
+defparam \sieteSegmentos3[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y21_N39
+cyclonev_io_obuf \sieteSegmentos3[4]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [3]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos3[4]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos3[4]~output .bus_hold = "false";
+defparam \sieteSegmentos3[4]~output .open_drain_output = "false";
+defparam \sieteSegmentos3[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y11_N62
+cyclonev_io_obuf \sieteSegmentos3[5]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [3]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos3[5]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos3[5]~output .bus_hold = "false";
+defparam \sieteSegmentos3[5]~output .open_drain_output = "false";
+defparam \sieteSegmentos3[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y9_N5
+cyclonev_io_obuf \sieteSegmentos3[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos3[6]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos3[6]~output .bus_hold = "false";
+defparam \sieteSegmentos3[6]~output .open_drain_output = "false";
+defparam \sieteSegmentos3[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y11_N45
+cyclonev_io_obuf \sieteSegmentos4[0]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [4]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos4[0]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos4[0]~output .bus_hold = "false";
+defparam \sieteSegmentos4[0]~output .open_drain_output = "false";
+defparam \sieteSegmentos4[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y13_N5
+cyclonev_io_obuf \sieteSegmentos4[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos4[1]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos4[1]~output .bus_hold = "false";
+defparam \sieteSegmentos4[1]~output .open_drain_output = "false";
+defparam \sieteSegmentos4[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y13_N22
+cyclonev_io_obuf \sieteSegmentos4[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos4[2]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos4[2]~output .bus_hold = "false";
+defparam \sieteSegmentos4[2]~output .open_drain_output = "false";
+defparam \sieteSegmentos4[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y8_N22
+cyclonev_io_obuf \sieteSegmentos4[3]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [4]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos4[3]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos4[3]~output .bus_hold = "false";
+defparam \sieteSegmentos4[3]~output .open_drain_output = "false";
+defparam \sieteSegmentos4[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y15_N22
+cyclonev_io_obuf \sieteSegmentos4[4]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [4]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos4[4]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos4[4]~output .bus_hold = "false";
+defparam \sieteSegmentos4[4]~output .open_drain_output = "false";
+defparam \sieteSegmentos4[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y15_N5
+cyclonev_io_obuf \sieteSegmentos4[5]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [4]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos4[5]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos4[5]~output .bus_hold = "false";
+defparam \sieteSegmentos4[5]~output .open_drain_output = "false";
+defparam \sieteSegmentos4[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y20_N45
+cyclonev_io_obuf \sieteSegmentos4[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos4[6]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos4[6]~output .bus_hold = "false";
+defparam \sieteSegmentos4[6]~output .open_drain_output = "false";
+defparam \sieteSegmentos4[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y20_N62
+cyclonev_io_obuf \sieteSegmentos5[0]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [5]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos5[0]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos5[0]~output .bus_hold = "false";
+defparam \sieteSegmentos5[0]~output .open_drain_output = "false";
+defparam \sieteSegmentos5[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y21_N56
+cyclonev_io_obuf \sieteSegmentos5[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos5[1]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos5[1]~output .bus_hold = "false";
+defparam \sieteSegmentos5[1]~output .open_drain_output = "false";
+defparam \sieteSegmentos5[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y25_N22
+cyclonev_io_obuf \sieteSegmentos5[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos5[2]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos5[2]~output .bus_hold = "false";
+defparam \sieteSegmentos5[2]~output .open_drain_output = "false";
+defparam \sieteSegmentos5[2]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y23_N22
+cyclonev_io_obuf \sieteSegmentos5[3]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [5]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos5[3]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos5[3]~output .bus_hold = "false";
+defparam \sieteSegmentos5[3]~output .open_drain_output = "false";
+defparam \sieteSegmentos5[3]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y9_N56
+cyclonev_io_obuf \sieteSegmentos5[4]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [5]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos5[4]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos5[4]~output .bus_hold = "false";
+defparam \sieteSegmentos5[4]~output .open_drain_output = "false";
+defparam \sieteSegmentos5[4]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y23_N5
+cyclonev_io_obuf \sieteSegmentos5[5]~output (
+	.i(\instanciaModuloContadorRegresivoParametrizable|salidaContador [5]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos5[5]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos5[5]~output .bus_hold = "false";
+defparam \sieteSegmentos5[5]~output .open_drain_output = "false";
+defparam \sieteSegmentos5[5]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X89_Y9_N39
+cyclonev_io_obuf \sieteSegmentos5[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(sieteSegmentos5[6]),
+	.obar());
+// synopsys translate_off
+defparam \sieteSegmentos5[6]~output .bus_hold = "false";
+defparam \sieteSegmentos5[6]~output .open_drain_output = "false";
+defparam \sieteSegmentos5[6]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X40_Y0_N18
+cyclonev_io_ibuf \reinicio~input (
+	.i(reinicio),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\reinicio~input_o ));
+// synopsys translate_off
+defparam \reinicio~input .bus_hold = "false";
+defparam \reinicio~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X40_Y0_N1
+cyclonev_io_ibuf \entradaIniciarCuenta~input (
+	.i(entradaIniciarCuenta),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\entradaIniciarCuenta~input_o ));
+// synopsys translate_off
+defparam \entradaIniciarCuenta~input .bus_hold = "false";
+defparam \entradaIniciarCuenta~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N36
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0_combout  = ( \entradaIniciarCuenta~input_o  ) # ( !\entradaIniciarCuenta~input_o  & ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) )
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\entradaIniciarCuenta~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0 .lut_mask = 64'h55555555FFFFFFFF;
+defparam \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N33
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  = ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  & ( \reinicio~input_o  ) ) # ( !\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  & ( 
+// (\reinicio~input_o  & !\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0_combout ) ) )
+
+	.dataa(!\reinicio~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~0_combout ),
+	.datae(gnd),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada .lut_mask = 64'h5500550055555555;
+defparam \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada .shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X36_Y0_N1
+cyclonev_io_ibuf \entradaAumentar~input (
+	.i(entradaAumentar),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\entradaAumentar~input_o ));
+// synopsys translate_off
+defparam \entradaAumentar~input .bus_hold = "false";
+defparam \entradaAumentar~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X36_Y0_N18
+cyclonev_io_ibuf \entradaDecrecer~input (
+	.i(entradaDecrecer),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\entradaDecrecer~input_o ));
+// synopsys translate_off
+defparam \entradaDecrecer~input .bus_hold = "false";
+defparam \entradaDecrecer~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N18
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0_combout  = ( \entradaAumentar~input_o  & ( !\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) ) # ( !\entradaAumentar~input_o  & ( 
+// (!\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout  & !\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ) ) )
+
+	.dataa(gnd),
+	.datab(!\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout ),
+	.datac(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(!\entradaAumentar~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0 .lut_mask = 64'hC0C0C0C0F0F0F0F0;
+defparam \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N54
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout  = ( \entradaAumentar~input_o  & ( (\reinicio~input_o  & (!\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0_combout  & 
+// \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout )) ) ) # ( !\entradaAumentar~input_o  & ( (\reinicio~input_o  & ((\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout ) # 
+// (\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0_combout ))) ) )
+
+	.dataa(!\reinicio~input_o ),
+	.datab(gnd),
+	.datac(!\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~0_combout ),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout ),
+	.datae(gnd),
+	.dataf(!\entradaAumentar~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado .lut_mask = 64'h0555055500500050;
+defparam \instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N51
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0_combout  = ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  & ( (!\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout ) # 
+// (\entradaDecrecer~input_o ) ) )
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\entradaDecrecer~input_o ),
+	.datae(gnd),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0 .lut_mask = 64'h00000000AAFFAAFF;
+defparam \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N48
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout  = ( \entradaDecrecer~input_o  & ( (\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout  & 
+// (!\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0_combout  & \reinicio~input_o )) ) ) # ( !\entradaDecrecer~input_o  & ( (\reinicio~input_o  & ((\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0_combout ) 
+// # (\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout ))) ) )
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout ),
+	.datab(gnd),
+	.datac(!\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~0_combout ),
+	.datad(!\reinicio~input_o ),
+	.datae(gnd),
+	.dataf(!\entradaDecrecer~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado .lut_mask = 64'h005F005F00500050;
+defparam \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N39
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout  = ( \instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout  & ( ((\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout ) # 
+// (\entradaAumentar~input_o )) # (\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ) ) ) # ( !\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout  & ( 
+// (!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  & (((\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout )) # (\entradaAumentar~input_o ))) # 
+// (\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  & (((\entradaDecrecer~input_o )))) ) )
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datab(!\entradaAumentar~input_o ),
+	.datac(!\entradaDecrecer~input_o ),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|botonAumentarPresionado~combout ),
+	.datae(gnd),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|botonDecrecerPresionado~combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0 .lut_mask = 64'h27AF27AF77FF77FF;
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N21
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout  = ( \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout  & ( (\reinicio~input_o  & 
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ) ) ) # ( !\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout  & ( (\reinicio~input_o  & 
+// !\instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ) ) )
+
+	.dataa(!\reinicio~input_o ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ),
+	.datae(gnd),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1 .lut_mask = 64'h5500550000550055;
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N0
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|Add0~22 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|Add0~22_cout  = CARRY(( \instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout  ) + ( VCC ) + ( !VCC ))
+
+	.dataa(gnd),
+	.datab(!\instanciaModuloContadorRegresivoParametrizable|salidaContador[0]~1_combout ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(),
+	.sumout(),
+	.cout(\instanciaModuloContadorRegresivoParametrizable|Add0~22_cout ),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~22 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~22 .lut_mask = 64'h0000000000003333;
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~22 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N3
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|Add0~1 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|Add0~1_sumout  = SUM(( \instanciaModuloContadorRegresivoParametrizable|salidaContador [1] ) + ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~22_cout  ))
+// \instanciaModuloContadorRegresivoParametrizable|Add0~2  = CARRY(( \instanciaModuloContadorRegresivoParametrizable|salidaContador [1] ) + ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~22_cout  ))
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [1]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\instanciaModuloContadorRegresivoParametrizable|Add0~22_cout ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\instanciaModuloContadorRegresivoParametrizable|Add0~1_sumout ),
+	.cout(\instanciaModuloContadorRegresivoParametrizable|Add0~2 ),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~1 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~1 .lut_mask = 64'h0000AAAA000000FF;
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~1 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N27
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|salidaContador[1] (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [1] = ( \instanciaModuloContadorRegresivoParametrizable|salidaContador [1] & ( \instanciaModuloContadorRegresivoParametrizable|Add0~1_sumout  & ( \reinicio~input_o  ) ) ) # ( 
+// !\instanciaModuloContadorRegresivoParametrizable|salidaContador [1] & ( \instanciaModuloContadorRegresivoParametrizable|Add0~1_sumout  & ( (\reinicio~input_o  & !\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ) ) ) ) # ( 
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [1] & ( !\instanciaModuloContadorRegresivoParametrizable|Add0~1_sumout  & ( (\reinicio~input_o  & \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ) ) ) )
+
+	.dataa(!\reinicio~input_o ),
+	.datab(gnd),
+	.datac(!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ),
+	.datad(gnd),
+	.datae(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [1]),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|Add0~1_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|salidaContador [1]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[1] .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[1] .lut_mask = 64'h0000050550505555;
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[1] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N6
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|Add0~5 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|Add0~5_sumout  = SUM(( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( \instanciaModuloContadorRegresivoParametrizable|salidaContador [2] ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~2  ))
+// \instanciaModuloContadorRegresivoParametrizable|Add0~6  = CARRY(( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( \instanciaModuloContadorRegresivoParametrizable|salidaContador [2] ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~2  ))
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datab(gnd),
+	.datac(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [2]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\instanciaModuloContadorRegresivoParametrizable|Add0~2 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\instanciaModuloContadorRegresivoParametrizable|Add0~5_sumout ),
+	.cout(\instanciaModuloContadorRegresivoParametrizable|Add0~6 ),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~5 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~5 .lut_mask = 64'h0000F0F000005555;
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~5 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N30
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|salidaContador[2] (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [2] = ( \instanciaModuloContadorRegresivoParametrizable|Add0~5_sumout  & ( (\reinicio~input_o  & ((!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ) # 
+// (\instanciaModuloContadorRegresivoParametrizable|salidaContador [2]))) ) ) # ( !\instanciaModuloContadorRegresivoParametrizable|Add0~5_sumout  & ( (\reinicio~input_o  & (\instanciaModuloContadorRegresivoParametrizable|salidaContador [2] & 
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout )) ) )
+
+	.dataa(!\reinicio~input_o ),
+	.datab(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [2]),
+	.datac(gnd),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ),
+	.datae(gnd),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|Add0~5_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|salidaContador [2]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[2] .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[2] .lut_mask = 64'h0011001155115511;
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[2] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N9
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|Add0~9 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|Add0~9_sumout  = SUM(( \instanciaModuloContadorRegresivoParametrizable|salidaContador [3] ) + ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~6  ))
+// \instanciaModuloContadorRegresivoParametrizable|Add0~10  = CARRY(( \instanciaModuloContadorRegresivoParametrizable|salidaContador [3] ) + ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~6  ))
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\instanciaModuloContadorRegresivoParametrizable|Add0~6 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\instanciaModuloContadorRegresivoParametrizable|Add0~9_sumout ),
+	.cout(\instanciaModuloContadorRegresivoParametrizable|Add0~10 ),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~9 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~9 .lut_mask = 64'h0000AAAA000000FF;
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~9 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N42
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|salidaContador[3] (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [3] = ( \instanciaModuloContadorRegresivoParametrizable|Add0~9_sumout  & ( (\reinicio~input_o  & ((!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ) # 
+// (\instanciaModuloContadorRegresivoParametrizable|salidaContador [3]))) ) ) # ( !\instanciaModuloContadorRegresivoParametrizable|Add0~9_sumout  & ( (\reinicio~input_o  & (\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout  & 
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [3])) ) )
+
+	.dataa(!\reinicio~input_o ),
+	.datab(!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ),
+	.datac(gnd),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [3]),
+	.datae(gnd),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|Add0~9_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|salidaContador [3]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[3] .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[3] .lut_mask = 64'h0011001144554455;
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[3] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N12
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|Add0~13 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|Add0~13_sumout  = SUM(( \instanciaModuloContadorRegresivoParametrizable|salidaContador [4] ) + ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~10  ))
+// \instanciaModuloContadorRegresivoParametrizable|Add0~14  = CARRY(( \instanciaModuloContadorRegresivoParametrizable|salidaContador [4] ) + ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~10  ))
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [4]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\instanciaModuloContadorRegresivoParametrizable|Add0~10 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\instanciaModuloContadorRegresivoParametrizable|Add0~13_sumout ),
+	.cout(\instanciaModuloContadorRegresivoParametrizable|Add0~14 ),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~13 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~13 .lut_mask = 64'h0000AAAA000000FF;
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~13 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N45
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|salidaContador[4] (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [4] = ( \instanciaModuloContadorRegresivoParametrizable|Add0~13_sumout  & ( (\reinicio~input_o  & ((!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ) # 
+// (\instanciaModuloContadorRegresivoParametrizable|salidaContador [4]))) ) ) # ( !\instanciaModuloContadorRegresivoParametrizable|Add0~13_sumout  & ( (\reinicio~input_o  & (\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout  & 
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [4])) ) )
+
+	.dataa(!\reinicio~input_o ),
+	.datab(gnd),
+	.datac(!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [4]),
+	.datae(gnd),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|Add0~13_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|salidaContador [4]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[4] .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[4] .lut_mask = 64'h0005000550555055;
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[4] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N15
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|Add0~17 (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|Add0~17_sumout  = SUM(( \instanciaModuloContadorRegresivoParametrizable|salidaContador [5] ) + ( \instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout  ) + ( 
+// \instanciaModuloContadorRegresivoParametrizable|Add0~14  ))
+
+	.dataa(!\instanciaModuloContadorRegresivoParametrizable|cuentaIniciada~combout ),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [5]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(\instanciaModuloContadorRegresivoParametrizable|Add0~14 ),
+	.sharein(gnd),
+	.combout(),
+	.sumout(\instanciaModuloContadorRegresivoParametrizable|Add0~17_sumout ),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~17 .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~17 .lut_mask = 64'h0000AAAA000000FF;
+defparam \instanciaModuloContadorRegresivoParametrizable|Add0~17 .shared_arith = "off";
+// synopsys translate_on
+
+// Location: LABCELL_X36_Y2_N57
+cyclonev_lcell_comb \instanciaModuloContadorRegresivoParametrizable|salidaContador[5] (
+// Equation(s):
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [5] = ( \instanciaModuloContadorRegresivoParametrizable|Add0~17_sumout  & ( (\reinicio~input_o  & ((!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ) # 
+// (\instanciaModuloContadorRegresivoParametrizable|salidaContador [5]))) ) ) # ( !\instanciaModuloContadorRegresivoParametrizable|Add0~17_sumout  & ( (\reinicio~input_o  & (\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout  & 
+// \instanciaModuloContadorRegresivoParametrizable|salidaContador [5])) ) )
+
+	.dataa(!\reinicio~input_o ),
+	.datab(gnd),
+	.datac(!\instanciaModuloContadorRegresivoParametrizable|salidaContador[5]~0_combout ),
+	.datad(!\instanciaModuloContadorRegresivoParametrizable|salidaContador [5]),
+	.datae(gnd),
+	.dataf(!\instanciaModuloContadorRegresivoParametrizable|Add0~17_sumout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\instanciaModuloContadorRegresivoParametrizable|salidaContador [5]),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[5] .extended_lut = "off";
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[5] .lut_mask = 64'h0005000550555055;
+defparam \instanciaModuloContadorRegresivoParametrizable|salidaContador[5] .shared_arith = "off";
+// synopsys translate_on
+
+// Location: IOIBUF_X32_Y0_N1
+cyclonev_io_ibuf \reloj~input (
+	.i(reloj),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\reloj~input_o ));
+// synopsys translate_off
+defparam \reloj~input .bus_hold = "false";
+defparam \reloj~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: MLABCELL_X52_Y15_N3
+cyclonev_lcell_comb \~QUARTUS_CREATED_GND~I (
+// Equation(s):
+
+	.dataa(gnd),
+	.datab(gnd),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\~QUARTUS_CREATED_GND~I_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \~QUARTUS_CREATED_GND~I .extended_lut = "off";
+defparam \~QUARTUS_CREATED_GND~I .lut_mask = 64'h0000000000000000;
+defparam \~QUARTUS_CREATED_GND~I .shared_arith = "off";
+// synopsys translate_on
+
+endmodule
