@@ -1,5 +1,5 @@
 Analysis & Synthesis report for problema2
-Tue Mar 14 00:57:54 2023
+Tue Mar 14 23:03:44 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,10 +13,11 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 14 00:57:54 2023       ;
+; Analysis & Synthesis Status     ; Successful - Tue Mar 14 23:03:44 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; problema2                                   ;
 ; Top-level Entity Name           ; problema2                                   ;
@@ -183,12 +184,12 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 7                                                                                                                    ;
+; Estimate of Logic utilization (ALMs needed) ; 9                                                                                                                    ;
 ;                                             ;                                                                                                                      ;
-; Combinational ALUT usage for logic          ; 13                                                                                                                   ;
+; Combinational ALUT usage for logic          ; 16                                                                                                                   ;
 ;     -- 7 input functions                    ; 0                                                                                                                    ;
-;     -- 6 input functions                    ; 0                                                                                                                    ;
-;     -- 5 input functions                    ; 4                                                                                                                    ;
+;     -- 6 input functions                    ; 2                                                                                                                    ;
+;     -- 5 input functions                    ; 5                                                                                                                    ;
 ;     -- 4 input functions                    ; 7                                                                                                                    ;
 ;     -- <=3 input functions                  ; 2                                                                                                                    ;
 ;                                             ;                                                                                                                      ;
@@ -200,8 +201,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                      ;
 ; Maximum fan-out node                        ; moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits|moduloSumadorCompletoBit:sumador0|resultado ;
 ; Maximum fan-out                             ; 7                                                                                                                    ;
-; Total fan-out                               ; 88                                                                                                                   ;
-; Average fan-out                             ; 1.49                                                                                                                 ;
+; Total fan-out                               ; 107                                                                                                                  ;
+; Average fan-out                             ; 1.73                                                                                                                 ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------+
 
 
@@ -210,8 +211,8 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
 ; Compilation Hierarchy Node                                                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                   ; Entity Name                     ; Library Name ;
 +-------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
-; |problema2                                                                    ; 13 (0)              ; 0 (0)                     ; 0                 ; 0          ; 23   ; 0            ; |problema2                                                                                                            ; problema2                       ; work         ;
-;    |moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|         ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |problema2|moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos                                           ; moduloDisplaySieteSegmentos     ; work         ;
+; |problema2                                                                    ; 16 (0)              ; 0 (0)                     ; 0                 ; 0          ; 23   ; 0            ; |problema2                                                                                                            ; problema2                       ; work         ;
+;    |moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|         ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |problema2|moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos                                           ; moduloDisplaySieteSegmentos     ; work         ;
 ;    |moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits| ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |problema2|moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits                                   ; moduloSumadorCompletoCuatroBits ; work         ;
 ;       |moduloSumadorCompletoBit:sumador0|                                     ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |problema2|moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits|moduloSumadorCompletoBit:sumador0 ; moduloSumadorCompletoBit        ; work         ;
 ;       |moduloSumadorCompletoBit:sumador1|                                     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |problema2|moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits|moduloSumadorCompletoBit:sumador1 ; moduloSumadorCompletoBit        ; work         ;
@@ -219,6 +220,20 @@ https://fpgasoftware.intel.com/eula.
 ;       |moduloSumadorCompletoBit:sumador3|                                     ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |problema2|moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits|moduloSumadorCompletoBit:sumador3 ; moduloSumadorCompletoBit        ; work         ;
 +-------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                ;
++-------------------------------------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-------------------------------------------------------------------------------------+---------------------+------------------------+
+; moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|sieteSegmentos1[1] ; VCC                 ; yes                    ;
+; moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|sieteSegmentos1[2] ; VCC                 ; yes                    ;
+; moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|sieteSegmentos1[4] ; VCC                 ; yes                    ;
+; moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|sieteSegmentos1[5] ; VCC                 ; yes                    ;
+; Number of user-specified and inferred latches = 4                                   ;                     ;                        ;
++-------------------------------------------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -241,17 +256,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 16                          ;
-;     normal            ; 16                          ;
-;         0 data inputs ; 2                           ;
+; arriav_lcell_comb     ; 18                          ;
+;     normal            ; 18                          ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
 ;         3 data inputs ; 2                           ;
 ;         4 data inputs ; 7                           ;
-;         5 data inputs ; 4                           ;
+;         5 data inputs ; 5                           ;
+;         6 data inputs ; 2                           ;
 ; boundary_port         ; 23                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.12                        ;
+; Average LUT depth     ; 3.11                        ;
 +-----------------------+-----------------------------+
 
 
@@ -260,7 +276,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -270,7 +286,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 14 00:57:38 2023
+    Info: Processing started: Tue Mar 14 23:03:29 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off problema2 -c problema2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -293,15 +309,8 @@ Info (12127): Elaborating entity "problema2" for the top level hierarchy
 Info (12128): Elaborating entity "moduloSumadorCompletoCuatroBits" for hierarchy "moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/problema2.vhd Line: 41
 Info (12128): Elaborating entity "moduloSumadorCompletoBit" for hierarchy "moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits|moduloSumadorCompletoBit:sumador0" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloSumadorCompletoCuatroBits.vhd Line: 32
 Info (12128): Elaborating entity "moduloDisplaySieteSegmentos" for hierarchy "moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/problema2.vhd Line: 42
-Warning (10631): VHDL Process Statement warning at moduloDisplaySieteSegmentos.vhd(16): inferring latch(es) for signal or variable "sieteSegmentos0", which holds its previous value in one or more paths through the process File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
 Warning (10631): VHDL Process Statement warning at moduloDisplaySieteSegmentos.vhd(16): inferring latch(es) for signal or variable "sieteSegmentos1", which holds its previous value in one or more paths through the process File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
-Info (10041): Inferred latch for "sieteSegmentos1[0]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
-Info (10041): Inferred latch for "sieteSegmentos1[1]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
-Info (10041): Inferred latch for "sieteSegmentos1[2]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
-Info (10041): Inferred latch for "sieteSegmentos1[3]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
-Info (10041): Inferred latch for "sieteSegmentos1[4]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
-Info (10041): Inferred latch for "sieteSegmentos1[5]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
-Info (10041): Inferred latch for "sieteSegmentos1[6]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Warning (10631): VHDL Process Statement warning at moduloDisplaySieteSegmentos.vhd(16): inferring latch(es) for signal or variable "sieteSegmentos0", which holds its previous value in one or more paths through the process File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
 Info (10041): Inferred latch for "sieteSegmentos0[0]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
 Info (10041): Inferred latch for "sieteSegmentos0[1]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
 Info (10041): Inferred latch for "sieteSegmentos0[2]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
@@ -309,21 +318,29 @@ Info (10041): Inferred latch for "sieteSegmentos0[3]" at moduloDisplaySieteSegme
 Info (10041): Inferred latch for "sieteSegmentos0[4]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
 Info (10041): Inferred latch for "sieteSegmentos0[5]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
 Info (10041): Inferred latch for "sieteSegmentos0[6]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Info (10041): Inferred latch for "sieteSegmentos1[0]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Info (10041): Inferred latch for "sieteSegmentos1[1]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Info (10041): Inferred latch for "sieteSegmentos1[2]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Info (10041): Inferred latch for "sieteSegmentos1[3]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Info (10041): Inferred latch for "sieteSegmentos1[4]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Info (10041): Inferred latch for "sieteSegmentos1[5]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Info (10041): Inferred latch for "sieteSegmentos1[6]" at moduloDisplaySieteSegmentos.vhd(16) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|sieteSegmentos1[2]" merged with LATCH primitive "moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|sieteSegmentos1[1]" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
+    Info (13026): Duplicate LATCH primitive "moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|sieteSegmentos1[5]" merged with LATCH primitive "moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos|sieteSegmentos1[4]" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/moduloDisplaySieteSegmentos.vhd Line: 16
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sieteSegmentos0[0]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/problema2.vhd Line: 10
-    Warning (13410): Pin "sieteSegmentos0[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/problema2.vhd Line: 10
-    Warning (13410): Pin "sieteSegmentos0[5]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/problema2.vhd Line: 10
+    Warning (13410): Pin "sieteSegmentos1[6]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema2/problema2.vhd Line: 11
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 36 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 39 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 13 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4859 megabytes
-    Info: Processing ended: Tue Mar 14 00:57:54 2023
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:34
+    Info (21061): Implemented 16 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4857 megabytes
+    Info: Processing ended: Tue Mar 14 23:03:44 2023
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:32
 
 

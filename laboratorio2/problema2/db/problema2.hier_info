@@ -8,20 +8,20 @@ operandoB[1] => moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCu
 operandoB[2] => moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits.operandoB[2]
 operandoB[3] => moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits.operandoB[3]
 carryEntrada => moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits.carryEntrada
-sieteSegmentos0[0] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[0]
-sieteSegmentos0[1] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[1]
-sieteSegmentos0[2] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[2]
-sieteSegmentos0[3] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[3]
-sieteSegmentos0[4] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[4]
-sieteSegmentos0[5] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[5]
-sieteSegmentos0[6] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[6]
-sieteSegmentos1[0] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[0]
-sieteSegmentos1[1] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[1]
-sieteSegmentos1[2] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[2]
-sieteSegmentos1[3] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[3]
-sieteSegmentos1[4] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[4]
-sieteSegmentos1[5] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[5]
-sieteSegmentos1[6] <= moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[6]
+sieteSegmentos0[0] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[0]
+sieteSegmentos0[1] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[1]
+sieteSegmentos0[2] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[2]
+sieteSegmentos0[3] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[3]
+sieteSegmentos0[4] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[4]
+sieteSegmentos0[5] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[5]
+sieteSegmentos0[6] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos0[6]
+sieteSegmentos1[0] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[0]
+sieteSegmentos1[1] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[1]
+sieteSegmentos1[2] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[2]
+sieteSegmentos1[3] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[3]
+sieteSegmentos1[4] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[4]
+sieteSegmentos1[5] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[5]
+sieteSegmentos1[6] << moduloDisplaySieteSegmentos:instanciaModuloDisplaySieteSegmentos.sieteSegmentos1[6]
 
 
 |problema2|moduloSumadorCompletoCuatroBits:instanciaModuloSumadorCompletoCuatroBits
@@ -105,6 +105,8 @@ resultado[0] => Mux3.IN19
 resultado[0] => Mux4.IN19
 resultado[0] => Mux5.IN19
 resultado[0] => Mux6.IN19
+resultado[0] => Mux7.IN19
+resultado[0] => Mux8.IN19
 resultado[1] => Mux0.IN18
 resultado[1] => Mux1.IN18
 resultado[1] => Mux2.IN18
@@ -112,6 +114,8 @@ resultado[1] => Mux3.IN18
 resultado[1] => Mux4.IN18
 resultado[1] => Mux5.IN18
 resultado[1] => Mux6.IN18
+resultado[1] => Mux7.IN18
+resultado[1] => Mux8.IN18
 resultado[2] => Mux0.IN17
 resultado[2] => Mux1.IN17
 resultado[2] => Mux2.IN17
@@ -119,6 +123,8 @@ resultado[2] => Mux3.IN17
 resultado[2] => Mux4.IN17
 resultado[2] => Mux5.IN17
 resultado[2] => Mux6.IN17
+resultado[2] => Mux7.IN17
+resultado[2] => Mux8.IN17
 resultado[3] => Mux0.IN16
 resultado[3] => Mux1.IN16
 resultado[3] => Mux2.IN16
@@ -126,23 +132,27 @@ resultado[3] => Mux3.IN16
 resultado[3] => Mux4.IN16
 resultado[3] => Mux5.IN16
 resultado[3] => Mux6.IN16
-carrySalida => sieteSegmentos0[6].DATAIN
-carrySalida => sieteSegmentos0[3].DATAIN
-carrySalida => sieteSegmentos0[2].DATAIN
-carrySalida => sieteSegmentos0[1].DATAIN
-sieteSegmentos0[0] <= <VCC>
-sieteSegmentos0[1] <= carrySalida.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos0[2] <= carrySalida.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos0[3] <= carrySalida.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos0[4] <= <GND>
-sieteSegmentos0[5] <= <GND>
-sieteSegmentos0[6] <= carrySalida.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos1[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos1[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos1[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos1[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos1[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos1[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-sieteSegmentos1[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] => Mux7.IN16
+resultado[3] => Mux8.IN16
+carrySalida => sieteSegmentos1[1]$latch.ACLR
+carrySalida => sieteSegmentos1[2]$latch.ACLR
+carrySalida => sieteSegmentos1[4]$latch.ACLR
+carrySalida => sieteSegmentos1[5]$latch.ACLR
+carrySalida => sieteSegmentos1[0].DATAIN
+carrySalida => sieteSegmentos1[3].DATAIN
+sieteSegmentos0[0] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos0[1] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos0[2] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos0[3] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos0[4] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos0[5] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos0[6] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos1[0] <= carrySalida.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos1[1] <= sieteSegmentos1[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos1[2] <= sieteSegmentos1[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos1[3] <= carrySalida.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos1[4] <= sieteSegmentos1[4]$latch.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos1[5] <= sieteSegmentos1[5]$latch.DB_MAX_OUTPUT_PORT_TYPE
+sieteSegmentos1[6] <= <VCC>
 
 

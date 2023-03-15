@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "sieteSegmentos0[0]",
+					"strict" : false
+				},
+				{
 					"name" : "sieteSegmentos0[1]",
 					"strict" : false
 				},
@@ -13,6 +17,14 @@
 				},
 				{
 					"name" : "sieteSegmentos0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sieteSegmentos0[5]",
 					"strict" : false
 				},
 				{
@@ -44,23 +56,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "sieteSegmentos1[6]",
+					"name" : "operandoA[0]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoA[3]",
+					"name" : "operandoB[0]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoB[3]",
-					"strict" : false
-				},
-				{
-					"name" : "operandoA[2]",
-					"strict" : false
-				},
-				{
-					"name" : "operandoB[2]",
+					"name" : "carryEntrada",
 					"strict" : false
 				},
 				{
@@ -72,15 +76,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "operandoA[0]",
+					"name" : "operandoA[2]",
 					"strict" : false
 				},
 				{
-					"name" : "carryEntrada",
+					"name" : "operandoB[2]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoB[0]",
+					"name" : "operandoA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "operandoB[3]",
 					"strict" : false
 				}
 			]
