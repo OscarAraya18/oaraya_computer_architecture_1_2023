@@ -1,5 +1,5 @@
 Analysis & Synthesis report for problema1
-Tue Mar 14 02:21:10 2023
+Tue Mar 14 22:42:54 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Mar 14 02:21:10 2023       ;
+; Analysis & Synthesis Status     ; Successful - Tue Mar 14 22:42:54 2023       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; problema1                                   ;
 ; Top-level Entity Name           ; problema1                                   ;
@@ -178,31 +178,31 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                   ;
-+---------------------------------------------+---------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                           ;
-+---------------------------------------------+---------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2                                                                               ;
-;                                             ;                                                                                 ;
-; Combinational ALUT usage for logic          ; 4                                                                               ;
-;     -- 7 input functions                    ; 0                                                                               ;
-;     -- 6 input functions                    ; 0                                                                               ;
-;     -- 5 input functions                    ; 0                                                                               ;
-;     -- 4 input functions                    ; 0                                                                               ;
-;     -- <=3 input functions                  ; 4                                                                               ;
-;                                             ;                                                                                 ;
-; Dedicated logic registers                   ; 0                                                                               ;
-;                                             ;                                                                                 ;
-; I/O pins                                    ; 39                                                                              ;
-;                                             ;                                                                                 ;
-; Total DSP Blocks                            ; 0                                                                               ;
-;                                             ;                                                                                 ;
-; Maximum fan-out node                        ; moduloConvertidorBinarioBCD:instanciaModuloConvertidorBinarioBCD|salidaBCD[1]~0 ;
-; Maximum fan-out                             ; 4                                                                               ;
-; Total fan-out                               ; 71                                                                              ;
-; Average fan-out                             ; 0.87                                                                            ;
-+---------------------------------------------+---------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                              ;
++---------------------------------------------+----------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                      ;
++---------------------------------------------+----------------------------------------------------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 2                                                                          ;
+;                                             ;                                                                            ;
+; Combinational ALUT usage for logic          ; 4                                                                          ;
+;     -- 7 input functions                    ; 0                                                                          ;
+;     -- 6 input functions                    ; 0                                                                          ;
+;     -- 5 input functions                    ; 0                                                                          ;
+;     -- 4 input functions                    ; 0                                                                          ;
+;     -- <=3 input functions                  ; 4                                                                          ;
+;                                             ;                                                                            ;
+; Dedicated logic registers                   ; 0                                                                          ;
+;                                             ;                                                                            ;
+; I/O pins                                    ; 39                                                                         ;
+;                                             ;                                                                            ;
+; Total DSP Blocks                            ; 0                                                                          ;
+;                                             ;                                                                            ;
+; Maximum fan-out node                        ; moduloConvertidorBinarioBCD:instanciaModuloConvertidorBinarioBCD|WideOr0~0 ;
+; Maximum fan-out                             ; 4                                                                          ;
+; Total fan-out                               ; 71                                                                         ;
+; Average fan-out                             ; 0.87                                                                       ;
++---------------------------------------------+----------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -245,14 +245,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 6                           ;
-;     normal            ; 6                           ;
+; arriav_lcell_comb     ; 8                           ;
+;     normal            ; 8                           ;
 ;         0 data inputs ; 2                           ;
+;         1 data inputs ; 2                           ;
 ;         3 data inputs ; 4                           ;
 ; boundary_port         ; 39                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.70                        ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.33                        ;
 +-----------------------+-----------------------------+
 
 
@@ -271,7 +272,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 14 02:20:52 2023
+    Info: Processing started: Tue Mar 14 22:42:41 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off problema1 -c problema1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -288,21 +289,21 @@ Info (12128): Elaborating entity "moduloConvertidorBinarioBCD" for hierarchy "mo
 Info (12128): Elaborating entity "moduloDisplayBCDSieteSegmentos" for hierarchy "moduloDisplayBCDSieteSegmentos:instanciaModuloDisplayBCDSieteSegmentos" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 26
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sieteSegmentos0[0]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 4
-    Warning (13410): Pin "sieteSegmentos0[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 4
-    Warning (13410): Pin "sieteSegmentos0[5]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 4
-    Warning (13410): Pin "sieteSegmentos1[0]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 5
-    Warning (13410): Pin "sieteSegmentos1[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 5
-    Warning (13410): Pin "sieteSegmentos1[5]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 5
-    Warning (13410): Pin "sieteSegmentos2[0]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 6
-    Warning (13410): Pin "sieteSegmentos2[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 6
-    Warning (13410): Pin "sieteSegmentos2[5]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 6
-    Warning (13410): Pin "sieteSegmentos3[0]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 7
-    Warning (13410): Pin "sieteSegmentos3[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 7
-    Warning (13410): Pin "sieteSegmentos3[5]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 7
-    Warning (13410): Pin "sieteSegmentos4[0]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 8
-    Warning (13410): Pin "sieteSegmentos4[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 8
-    Warning (13410): Pin "sieteSegmentos4[5]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 8
+    Warning (13410): Pin "sieteSegmentos0[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 4
+    Warning (13410): Pin "sieteSegmentos0[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 4
+    Warning (13410): Pin "sieteSegmentos0[6]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 4
+    Warning (13410): Pin "sieteSegmentos1[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 5
+    Warning (13410): Pin "sieteSegmentos1[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 5
+    Warning (13410): Pin "sieteSegmentos1[6]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 5
+    Warning (13410): Pin "sieteSegmentos2[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 6
+    Warning (13410): Pin "sieteSegmentos2[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 6
+    Warning (13410): Pin "sieteSegmentos2[6]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 6
+    Warning (13410): Pin "sieteSegmentos3[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 7
+    Warning (13410): Pin "sieteSegmentos3[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 7
+    Warning (13410): Pin "sieteSegmentos3[6]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 7
+    Warning (13410): Pin "sieteSegmentos4[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 8
+    Warning (13410): Pin "sieteSegmentos4[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 8
+    Warning (13410): Pin "sieteSegmentos4[6]" is stuck at VCC File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio2/problema1/problema1.sv Line: 8
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -311,9 +312,9 @@ Info (21057): Implemented 43 device resources after synthesis - the final resour
     Info (21059): Implemented 35 output pins
     Info (21061): Implemented 4 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 4834 megabytes
-    Info: Processing ended: Tue Mar 14 02:21:10 2023
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:44
+    Info: Peak virtual memory: 4836 megabytes
+    Info: Processing ended: Tue Mar 14 22:42:54 2023
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:31
 
 

@@ -8,20 +8,20 @@ module moduloDisplayBCDSieteSegmentos(entradaBCD, sieteSegmentos0, sieteSegmento
 	output logic [6:0] sieteSegmentos4;
 	
 	always_comb begin
-		if (entradaBCD[0] == 1'b0) sieteSegmentos0 = 7'b0000001;
-		else sieteSegmentos0 = 7'b1001111;
+		if (entradaBCD[4] == 1'b0) sieteSegmentos0 = 7'b1000000;
+		else sieteSegmentos0 = 7'b1111001;
 		
-		if (entradaBCD[1] == 1'b0) sieteSegmentos1 = 7'b0000001;
-		else sieteSegmentos1 = 7'b1001111;
+		if (entradaBCD[3] == 1'b0) sieteSegmentos1 = 7'b1000000;
+		else sieteSegmentos1 = 7'b1111001;
 		
-		if (entradaBCD[2] == 1'b0) sieteSegmentos2 = 7'b0000001;
-		else sieteSegmentos2 = 7'b1001111;
+		if (entradaBCD[2] == 1'b0) sieteSegmentos2 = 7'b1000000;
+		else sieteSegmentos2 = 7'b1111001;
 		
-		if (entradaBCD[3] == 1'b0) sieteSegmentos3 = 7'b0000001;
-		else sieteSegmentos3 = 7'b1001111;
+		if (entradaBCD[1] == 1'b0) sieteSegmentos3 = 7'b1000000;
+		else sieteSegmentos3 = 7'b1111001;
 		
-		if (entradaBCD[4] == 1'b0) sieteSegmentos4 = 7'b0000001;
-		else sieteSegmentos4 = 7'b1001111;
+		if (entradaBCD[0] == 1'b0) sieteSegmentos4 = 7'b1000000;
+		else sieteSegmentos4 = 7'b1111001;
 	end
 
 endmodule 

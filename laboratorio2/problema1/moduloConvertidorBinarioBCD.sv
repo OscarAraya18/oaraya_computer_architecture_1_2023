@@ -3,20 +3,26 @@ module moduloConvertidorBinarioBCD(entradaBinario, salidaBCD);
 	input logic [3:0] entradaBinario;
 	output logic [4:0] salidaBCD;
 	
-	wire B3;
-	wire B2;
-	wire B1;
-	wire B0;
-	
-	assign B3 = entradaBinario[3];
-	assign B2 = entradaBinario[2];
-	assign B1 = entradaBinario[1];
-	assign B0 = entradaBinario[0];
-	
-	assign salidaBCD[4] = (B3 & B1) | (B3 & B2);
-	assign salidaBCD[3] = (B3 & ~B2 & ~B1);
-	assign salidaBCD[2] = (~B3 & B2) | (B2 & B1);
-	assign salidaBCD[1] = (~B3 & B1) | (B3 & B2 & ~B1);
-	assign salidaBCD[0] = (B0);
+	always_comb begin
+		case (entradaBinario) 
+			4'b0000: salidaBCD = 5'b00000;
+			4'b0001: salidaBCD = 5'b00001;
+			4'b0010: salidaBCD = 5'b00010;
+			4'b0011: salidaBCD = 5'b00011;
+			4'b0100: salidaBCD = 5'b00100;
+			4'b0101: salidaBCD = 5'b00101;
+			4'b0110: salidaBCD = 5'b00110;
+			4'b0111: salidaBCD = 5'b00111;
+			4'b1000: salidaBCD = 5'b01000;
+			4'b1001: salidaBCD = 5'b01001;
+			4'b1010: salidaBCD = 5'b10000;
+			4'b1011: salidaBCD = 5'b10001;
+			4'b1100: salidaBCD = 5'b10010;
+			4'b1101: salidaBCD = 5'b10011;
+			4'b1110: salidaBCD = 5'b10100;
+			4'b1111: salidaBCD = 5'b10101;
+			default: salidaBCD = 5'b00000;
+		endcase
+	end
 	
 endmodule 
