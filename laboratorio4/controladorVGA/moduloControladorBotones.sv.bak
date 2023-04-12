@@ -1,0 +1,3 @@
+module moduloControladorBotones (reloj, reinicio, botonArriba, botonAbajo, botonIzquierda, botonDerecha);
+
+endmodule 

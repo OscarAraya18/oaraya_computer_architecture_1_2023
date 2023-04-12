@@ -1,0 +1,3 @@
+module moduloControladorVGA (reloj, reinicio);
+
+endmodule 

@@ -1,0 +1,85 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sincronizacionHorizontal",
+					"strict" : false
+				},
+				{
+					"name" : "sincronizacionVertical",
+					"strict" : false
+				},
+				{
+					"name" : "escalaRojo[5]",
+					"strict" : false
+				},
+				{
+					"name" : "escalaRojo[6]",
+					"strict" : false
+				},
+				{
+					"name" : "escalaRojo[7]",
+					"strict" : false
+				},
+				{
+					"name" : "escalaVerde[5]",
+					"strict" : false
+				},
+				{
+					"name" : "escalaVerde[6]",
+					"strict" : false
+				},
+				{
+					"name" : "escalaVerde[7]",
+					"strict" : false
+				},
+				{
+					"name" : "escalaAzul[5]",
+					"strict" : false
+				},
+				{
+					"name" : "escalaAzul[6]",
+					"strict" : false
+				},
+				{
+					"name" : "escalaAzul[7]",
+					"strict" : false
+				},
+				{
+					"name" : "relojVGA",
+					"strict" : false
+				},
+				{
+					"name" : "parpadeoVGA",
+					"strict" : false
+				},
+				{
+					"name" : "reinicio",
+					"strict" : false
+				},
+				{
+					"name" : "reloj",
+					"strict" : false
+				},
+				{
+					"name" : "botonDerecha",
+					"strict" : false
+				},
+				{
+					"name" : "botonArriba",
+					"strict" : false
+				},
+				{
+					"name" : "botonAbajo",
+					"strict" : false
+				},
+				{
+					"name" : "botonIzquierda",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : -8.747
+TNS   : -218.136
+
+Type  : Slow 1100mV 85C Model Setup 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : -2.256
+TNS   : -8.093
+
+Type  : Slow 1100mV 85C Model Setup 'reloj'
+Slack : -1.467
+TNS   : -2.018
+
+Type  : Slow 1100mV 85C Model Hold 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : 0.447
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'reloj'
+Slack : 0.576
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : 0.841
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'reloj'
+Slack : -0.882
+TNS   : -3.033
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : -0.394
+TNS   : -22.224
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : 0.280
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : -8.607
+TNS   : -213.896
+
+Type  : Slow 1100mV 0C Model Setup 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : -2.100
+TNS   : -7.780
+
+Type  : Slow 1100mV 0C Model Setup 'reloj'
+Slack : -1.398
+TNS   : -1.946
+
+Type  : Slow 1100mV 0C Model Hold 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : 0.459
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'reloj'
+Slack : 0.557
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : 0.784
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'reloj'
+Slack : -0.890
+TNS   : -3.128
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : -0.394
+TNS   : -21.983
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : 0.283
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : -4.857
+TNS   : -119.730
+
+Type  : Fast 1100mV 85C Model Setup 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : -0.815
+TNS   : -2.753
+
+Type  : Fast 1100mV 85C Model Setup 'reloj'
+Slack : -0.755
+TNS   : -0.785
+
+Type  : Fast 1100mV 85C Model Hold 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'reloj'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : 0.477
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'reloj'
+Slack : -0.768
+TNS   : -2.366
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : 0.021
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : 0.352
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : -4.378
+TNS   : -106.037
+
+Type  : Fast 1100mV 0C Model Setup 'reloj'
+Slack : -0.611
+TNS   : -0.611
+
+Type  : Fast 1100mV 0C Model Setup 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : -0.596
+TNS   : -2.104
+
+Type  : Fast 1100mV 0C Model Hold 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : 0.148
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'reloj'
+Slack : 0.266
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : 0.424
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'reloj'
+Slack : -0.741
+TNS   : -2.277
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz'
+Slack : 0.050
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'moduloControladorBotones:comb_19|botonPresionado[0]'
+Slack : 0.354
+TNS   : 0.000
+
+------------------------------------------------------------

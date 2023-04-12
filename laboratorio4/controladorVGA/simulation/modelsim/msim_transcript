@@ -1,0 +1,72 @@
+# Reading pref.tcl
+# do controladorVGA_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:46 on Apr 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv 
+# -- Compiling module controladorVGA
+# 
+# Top level modules:
+# 	controladorVGA
+# End time: 11:21:47 on Apr 03,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorVGA.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:48 on Apr 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorVGA.sv 
+# -- Compiling module moduloControladorVGA
+# 
+# Top level modules:
+# 	moduloControladorVGA
+# End time: 11:21:48 on Apr 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloReloj25MHz.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:48 on Apr 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloReloj25MHz.sv 
+# -- Compiling module moduloReloj25MHz
+# 
+# Top level modules:
+# 	moduloReloj25MHz
+# End time: 11:21:48 on Apr 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/testbenchReloj.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 11:21:48 on Apr 03,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/testbenchReloj.sv 
+# -- Compiling module testbenchReloj
+# 
+# Top level modules:
+# 	testbenchReloj
+# End time: 11:21:48 on Apr 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  testbenchReloj
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" testbenchReloj 
+# Start time: 11:21:48 on Apr 03,2023
+# Loading sv_std.std
+# Loading work.testbenchReloj
+# Loading work.moduloReloj25MHz
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+#           File in use by: osaro  Hostname: LAPTOP-D4HN7JJK  ProcessID: 16268
+#           Attempting to use alternate WLF file "./wlftw3fvac".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+#           Using alternate file: ./wlftw3fvac
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all

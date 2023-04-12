@@ -1,0 +1,659 @@
+Analysis & Synthesis report for controladorVGA
+Tue Apr 04 16:39:59 2023
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |controladorVGA|moduloControladorVGA:instanciaModuloControladorVGA|registroEstadoVerticalActual
+  9. State Machine - |controladorVGA|moduloControladorVGA:instanciaModuloControladorVGA|registroEstadoHorizontalActual
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: moduloDibujo:instanciaModuloDibujo
+ 15. Parameter Settings for User Entity Instance: moduloControladorVGA:instanciaModuloControladorVGA
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Apr 04 16:39:58 2023       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; controladorVGA                              ;
+; Top-level Entity Name           ; controladorVGA                              ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 42                                          ;
+; Total pins                      ; 35                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; controladorVGA     ; controladorVGA     ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 8           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                   ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
+; controladorVGA.sv                ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv           ;         ;
+; moduloControladorVGA.sv          ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorVGA.sv     ;         ;
+; moduloReloj25MHz.sv              ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloReloj25MHz.sv         ;         ;
+; moduloDibujo.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv             ;         ;
+; moduloControladorBotones.sv      ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorBotones.sv ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                    ;
++---------------------------------------------+----------------------------------+
+; Resource                                    ; Usage                            ;
++---------------------------------------------+----------------------------------+
+; Estimate of Logic utilization (ALMs needed) ; 497                              ;
+;                                             ;                                  ;
+; Combinational ALUT usage for logic          ; 794                              ;
+;     -- 7 input functions                    ; 7                                ;
+;     -- 6 input functions                    ; 192                              ;
+;     -- 5 input functions                    ; 215                              ;
+;     -- 4 input functions                    ; 175                              ;
+;     -- <=3 input functions                  ; 205                              ;
+;                                             ;                                  ;
+; Dedicated logic registers                   ; 42                               ;
+;                                             ;                                  ;
+; I/O pins                                    ; 35                               ;
+;                                             ;                                  ;
+; Total DSP Blocks                            ; 0                                ;
+;                                             ;                                  ;
+; Maximum fan-out node                        ; cantidadSegundosTranscurridos[0] ;
+; Maximum fan-out                             ; 60                               ;
+; Total fan-out                               ; 3694                             ;
+; Average fan-out                             ; 4.08                             ;
++---------------------------------------------+----------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                             ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+--------------------------+--------------+
+; Compilation Hierarchy Node                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Entity Name              ; Library Name ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+--------------------------+--------------+
+; |controladorVGA                                         ; 794 (9)             ; 42 (0)                    ; 0                 ; 0          ; 35   ; 0            ; |controladorVGA                                                    ; controladorVGA           ; work         ;
+;    |moduloControladorBotones:comb_19|                   ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |controladorVGA|moduloControladorBotones:comb_19                   ; moduloControladorBotones ; work         ;
+;    |moduloControladorVGA:instanciaModuloControladorVGA| ; 73 (73)             ; 40 (40)                   ; 0                 ; 0          ; 0    ; 0            ; |controladorVGA|moduloControladorVGA:instanciaModuloControladorVGA ; moduloControladorVGA     ; work         ;
+;    |moduloDibujo:instanciaModuloDibujo|                 ; 701 (701)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |controladorVGA|moduloDibujo:instanciaModuloDibujo                 ; moduloDibujo             ; work         ;
+;    |moduloReloj25MHz:instanciaModuloReloj25MHz|         ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |controladorVGA|moduloReloj25MHz:instanciaModuloReloj25MHz         ; moduloReloj25MHz         ; work         ;
++---------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+--------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |controladorVGA|moduloControladorVGA:instanciaModuloControladorVGA|registroEstadoVerticalActual                                                                                                                                                                                                                                           ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------+-----------------------------------------------------+
+; Name                                                                      ; registroEstadoVerticalActual.ESTADO_VERTICAL_DESPUES_PULSO_SINCRONIZACION ; registroEstadoVerticalActual.ESTADO_VERTICAL_PULSO_SINCRONIZACION ; registroEstadoVerticalActual.ESTADO_VERTICAL_ANTES_PULSO_SINCRONIZACION ; registroEstadoVerticalActual.ESTADO_VERTICAL_ACTIVO ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------+-----------------------------------------------------+
+; registroEstadoVerticalActual.ESTADO_VERTICAL_ACTIVO                       ; 0                                                                         ; 0                                                                 ; 0                                                                       ; 0                                                   ;
+; registroEstadoVerticalActual.ESTADO_VERTICAL_ANTES_PULSO_SINCRONIZACION   ; 0                                                                         ; 0                                                                 ; 1                                                                       ; 1                                                   ;
+; registroEstadoVerticalActual.ESTADO_VERTICAL_PULSO_SINCRONIZACION         ; 0                                                                         ; 1                                                                 ; 0                                                                       ; 1                                                   ;
+; registroEstadoVerticalActual.ESTADO_VERTICAL_DESPUES_PULSO_SINCRONIZACION ; 1                                                                         ; 0                                                                 ; 0                                                                       ; 1                                                   ;
++---------------------------------------------------------------------------+---------------------------------------------------------------------------+-------------------------------------------------------------------+-------------------------------------------------------------------------+-----------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |controladorVGA|moduloControladorVGA:instanciaModuloControladorVGA|registroEstadoHorizontalActual                                                                                                                                                                                                                                                             ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------+
+; Name                                                                          ; registroEstadoHorizontalActual.ESTADO_HORIZONTAL_DESPUES_PULSO_SINCRONIZACION ; registroEstadoHorizontalActual.ESTADO_HORIZONTAL_PULSO_SINCRONIZACION ; registroEstadoHorizontalActual.ESTADO_HORIZONTAL_ANTES_PULSO_SINCRONIZACION ; registroEstadoHorizontalActual.ESTADO_HORIZONTAL_ACTIVO ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------+
+; registroEstadoHorizontalActual.ESTADO_HORIZONTAL_ACTIVO                       ; 0                                                                             ; 0                                                                     ; 0                                                                           ; 0                                                       ;
+; registroEstadoHorizontalActual.ESTADO_HORIZONTAL_ANTES_PULSO_SINCRONIZACION   ; 0                                                                             ; 0                                                                     ; 1                                                                           ; 1                                                       ;
+; registroEstadoHorizontalActual.ESTADO_HORIZONTAL_PULSO_SINCRONIZACION         ; 0                                                                             ; 1                                                                     ; 0                                                                           ; 1                                                       ;
+; registroEstadoHorizontalActual.ESTADO_HORIZONTAL_DESPUES_PULSO_SINCRONIZACION ; 1                                                                             ; 0                                                                     ; 0                                                                           ; 1                                                       ;
++-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+-----------------------------------------------------------------------+-----------------------------------------------------------------------------+---------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; cantidadSegundosTranscurridos[2]                    ; Equal0              ; yes                    ;
+; cantidadSegundosTranscurridos[3]                    ; Equal0              ; yes                    ;
+; cantidadSegundosTranscurridos[1]                    ; Equal0              ; yes                    ;
+; cantidadSegundosTranscurridos[0]                    ; Equal0              ; yes                    ;
+; moduloControladorBotones:comb_19|botonPresionado[0] ; GND                 ; yes                    ;
+; moduloControladorBotones:comb_19|botonPresionado[1] ; GND                 ; yes                    ;
+; moduloControladorBotones:comb_19|botonPresionado[2] ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 7   ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                           ;
++-------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                       ; Reason for Removal                     ;
++-------------------------------------------------------------------------------------+----------------------------------------+
+; moduloControladorVGA:instanciaModuloControladorVGA|registroEscalaVerde[0]           ; Stuck at GND due to stuck port data_in ;
+; moduloControladorVGA:instanciaModuloControladorVGA|registroEscalaAzul[0..4]         ; Stuck at GND due to stuck port data_in ;
+; moduloControladorVGA:instanciaModuloControladorVGA|registroEscalaVerde[1..4]        ; Stuck at GND due to stuck port data_in ;
+; moduloControladorVGA:instanciaModuloControladorVGA|registroEscalaRojo[0..4]         ; Stuck at GND due to stuck port data_in ;
+; moduloControladorVGA:instanciaModuloControladorVGA|registroEstadoVerticalActual~6   ; Lost fanout                            ;
+; moduloControladorVGA:instanciaModuloControladorVGA|registroEstadoVerticalActual~7   ; Lost fanout                            ;
+; moduloControladorVGA:instanciaModuloControladorVGA|registroEstadoHorizontalActual~5 ; Lost fanout                            ;
+; moduloControladorVGA:instanciaModuloControladorVGA|registroEstadoHorizontalActual~6 ; Lost fanout                            ;
+; Total Number of Removed Registers = 19                                              ;                                        ;
++-------------------------------------------------------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 42    ;
+; Number of registers using Synchronous Clear  ; 27    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+; 10:1               ; 10 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |controladorVGA|moduloControladorVGA:instanciaModuloControladorVGA|registroContadorVertical[9]   ;
+; 10:1               ; 10 bits   ; 60 LEs        ; 0 LEs                ; 60 LEs                 ; Yes        ; |controladorVGA|moduloControladorVGA:instanciaModuloControladorVGA|registroContadorHorizontal[0] ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |controladorVGA|moduloControladorBotones:comb_19|botonPresionado[0]                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: moduloDibujo:instanciaModuloDibujo ;
++------------------------------------+------------+-------------------------------+
+; Parameter Name                     ; Value      ; Type                          ;
++------------------------------------+------------+-------------------------------+
+; COLOR_NEGRO                        ; 000000000  ; Unsigned Binary               ;
+; COLOR_BLANCO                       ; 111111111  ; Unsigned Binary               ;
+; DESFASE_HORIZONTAL_PRIMERA_COLUMNA ; 0000000000 ; Unsigned Binary               ;
+; DESFASE_HORIZONTAL_SEGUNDA_COLUMNA ; 0010011000 ; Unsigned Binary               ;
+; DESFASE_HORIZONTAL_TERCERA_COLUMNA ; 0100110000 ; Unsigned Binary               ;
+; DESFASE_HORIZONTAL_CUARTA_COLUMNA  ; 0111001000 ; Unsigned Binary               ;
+; DESFASE_VERTICAL_PRIMERA_FILA      ; 0000000000 ; Unsigned Binary               ;
+; DESFASE_VERTICAL_SEGUNDA_FILA      ; 0001101110 ; Unsigned Binary               ;
+; DESFASE_VERTICAL_TERCERA_FILA      ; 0011100110 ; Unsigned Binary               ;
+; DESFASE_VERTICAL_CUARTA_FILA       ; 0101011110 ; Unsigned Binary               ;
+; DESFASE_PRIMER_DIGITO              ; 0000000000 ; Unsigned Binary               ;
+; DESFASE_SEGUNDO_DIGITO             ; 0000011001 ; Unsigned Binary               ;
+; DESFASE_TERCER_DIGITO              ; 0000110010 ; Unsigned Binary               ;
+; DESFASE_CUARTO_DIGITO              ; 0001001011 ; Unsigned Binary               ;
++------------------------------------+------------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: moduloControladorVGA:instanciaModuloControladorVGA ;
++---------------------------------------------------------+------------+--------------------------+
+; Parameter Name                                          ; Value      ; Type                     ;
++---------------------------------------------------------+------------+--------------------------+
+; CANTIDAD_CICLOS_ACTIVOS_HORIZONTAL                      ; 1001111111 ; Unsigned Binary          ;
+; CANTIDAD_CICLOS_ANTES_PULSO_SINCRONIZACION_HORIZONTAL   ; 0000001111 ; Unsigned Binary          ;
+; CANTIDAD_CICLOS_PULSO_SINCRONIZACION_HORIZONTAL         ; 0001011111 ; Unsigned Binary          ;
+; CANTIDAD_CICLOS_DESPUES_PULSO_SINCRONIZACION_HORIZONTAL ; 0000101111 ; Unsigned Binary          ;
+; CANTIDAD_LINEAS_ACTIVAS_VERTICAL                        ; 0111011111 ; Unsigned Binary          ;
+; CANTIDAD_LINEAS_ANTES_PULSO_SINCRONIZACION_VERTICAL     ; 0000001001 ; Unsigned Binary          ;
+; CANTIDAD_LINEAS_PULSO_SINCRONIZACION_VERTICAL           ; 0000000001 ; Unsigned Binary          ;
+; CANTIDAD_LINEAS_DESPUES_PULSO_SINCRONIZACION_VERTICAL   ; 0000100000 ; Unsigned Binary          ;
+; ESTADO_HORIZONTAL_ACTIVO                                ; 00         ; Unsigned Binary          ;
+; ESTADO_HORIZONTAL_ANTES_PULSO_SINCRONIZACION            ; 01         ; Unsigned Binary          ;
+; ESTADO_HORIZONTAL_PULSO_SINCRONIZACION                  ; 10         ; Unsigned Binary          ;
+; ESTADO_HORIZONTAL_DESPUES_PULSO_SINCRONIZACION          ; 11         ; Unsigned Binary          ;
+; ESTADO_VERTICAL_ACTIVO                                  ; 00         ; Unsigned Binary          ;
+; ESTADO_VERTICAL_ANTES_PULSO_SINCRONIZACION              ; 01         ; Unsigned Binary          ;
+; ESTADO_VERTICAL_PULSO_SINCRONIZACION                    ; 10         ; Unsigned Binary          ;
+; ESTADO_VERTICAL_DESPUES_PULSO_SINCRONIZACION            ; 11         ; Unsigned Binary          ;
++---------------------------------------------------------+------------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 42                          ;
+;     ENA               ; 12                          ;
+;     ENA SCLR          ; 10                          ;
+;     SCLR              ; 17                          ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 795                         ;
+;     arith             ; 20                          ;
+;         1 data inputs ; 20                          ;
+;     extend            ; 7                           ;
+;         7 data inputs ; 7                           ;
+;     normal            ; 768                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 54                          ;
+;         3 data inputs ; 130                         ;
+;         4 data inputs ; 175                         ;
+;         5 data inputs ; 215                         ;
+;         6 data inputs ; 192                         ;
+; boundary_port         ; 35                          ;
+;                       ;                             ;
+; Max LUT depth         ; 14.00                       ;
+; Average LUT depth     ; 10.63                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:12     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Tue Apr 04 16:39:16 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off controladorVGA -c controladorVGA
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file controladorvga.sv
+    Info (12023): Found entity 1: controladorVGA File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modulodisplaysietesegmentos.sv
+    Info (12023): Found entity 1: moduloDisplaySieteSegmentos File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDisplaySieteSegmentos.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modulocontroladorvga.sv
+    Info (12023): Found entity 1: moduloControladorVGA File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorVGA.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file moduloreloj25mhz.sv
+    Info (12023): Found entity 1: moduloReloj25MHz File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloReloj25MHz.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modulodibujo.sv
+    Info (12023): Found entity 1: moduloDibujo File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modulocontroladorbotones.sv
+    Info (12023): Found entity 1: moduloControladorBotones File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorBotones.sv Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at controladorVGA.sv(43): instance has no name File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 43
+Info (12127): Elaborating entity "controladorVGA" for the top level hierarchy
+Warning (10235): Verilog HDL Always Construct warning at controladorVGA.sv(28): variable "cantidadSegundosTranscurridos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 28
+Warning (10235): Verilog HDL Always Construct warning at controladorVGA.sv(29): variable "cantidadSegundosTranscurridos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 29
+Warning (10235): Verilog HDL Always Construct warning at controladorVGA.sv(31): variable "cantidadSegundosTranscurridos" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 31
+Warning (10240): Verilog HDL Always Construct warning at controladorVGA.sv(26): inferring latch(es) for variable "cantidadSegundosTranscurridos", which holds its previous value in one or more paths through the always construct File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 26
+Info (10041): Inferred latch for "cantidadSegundosTranscurridos[0]" at controladorVGA.sv(26) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 26
+Info (10041): Inferred latch for "cantidadSegundosTranscurridos[1]" at controladorVGA.sv(26) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 26
+Info (10041): Inferred latch for "cantidadSegundosTranscurridos[2]" at controladorVGA.sv(26) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 26
+Info (10041): Inferred latch for "cantidadSegundosTranscurridos[3]" at controladorVGA.sv(26) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 26
+Info (12128): Elaborating entity "moduloControladorBotones" for hierarchy "moduloControladorBotones:comb_19" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 43
+Warning (10240): Verilog HDL Always Construct warning at moduloControladorBotones.sv(10): inferring latch(es) for variable "botonPresionado", which holds its previous value in one or more paths through the always construct File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorBotones.sv Line: 10
+Info (10041): Inferred latch for "botonPresionado[0]" at moduloControladorBotones.sv(12) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorBotones.sv Line: 12
+Info (10041): Inferred latch for "botonPresionado[1]" at moduloControladorBotones.sv(12) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorBotones.sv Line: 12
+Info (10041): Inferred latch for "botonPresionado[2]" at moduloControladorBotones.sv(12) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloControladorBotones.sv Line: 12
+Info (12128): Elaborating entity "moduloReloj25MHz" for hierarchy "moduloReloj25MHz:instanciaModuloReloj25MHz" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 50
+Warning (10230): Verilog HDL assignment warning at moduloReloj25MHz.sv(16): truncated value with size 32 to match size of target (1) File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloReloj25MHz.sv Line: 16
+Info (12128): Elaborating entity "moduloDibujo" for hierarchy "moduloDibujo:instanciaModuloDibujo" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 75
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(48): variable "reinicio" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 48
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(63): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 63
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(87): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 87
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(107): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 107
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(146): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 146
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(182): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 182
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(226): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 226
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(270): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 270
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(330): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 330
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(398): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 398
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(450): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 450
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(522): variable "posicion0" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 522
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(617): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 617
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(641): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 641
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(661): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 661
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(700): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 700
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(736): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 736
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(780): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 780
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(824): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 824
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(884): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 884
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(952): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 952
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1004): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1004
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1076): variable "posicion1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1076
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1171): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1171
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1195): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1195
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1215): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1215
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1254): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1254
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1290): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1290
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1334): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1334
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1378): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1378
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1438): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1438
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1506): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1506
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1558): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1558
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1630): variable "posicion2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1630
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1725): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1725
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1749): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1749
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1769): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1769
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1808): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1808
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1844): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1844
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1888): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1888
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1932): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1932
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(1992): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 1992
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2060): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2060
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2112): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2112
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2184): variable "posicion3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2184
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2291): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2291
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2315): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2315
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2335): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2335
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2374): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2374
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2410): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2410
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2454): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2454
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2498): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2498
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2558): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2558
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2626): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2626
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2678): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2678
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2750): variable "posicion4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2750
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2845): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2845
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2869): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2869
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2889): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2889
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2928): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2928
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(2964): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 2964
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3008): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3008
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3052): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3052
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3112): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3112
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3180): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3180
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3232): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3232
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3304): variable "posicion5" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3304
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3399): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3399
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3423): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3423
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3443): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3443
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3482): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3482
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3518): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3518
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3562): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3562
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3606): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3606
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3666): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3666
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3734): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3734
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3786): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3786
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3858): variable "posicion6" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3858
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3953): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3953
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3977): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3977
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(3997): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 3997
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4036): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4036
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4072): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4072
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4116): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4116
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4160): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4160
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4220): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4220
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4288): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4288
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4340): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4340
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4412): variable "posicion7" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4412
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4510): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4510
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4534): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4534
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4554): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4554
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4593): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4593
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4629): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4629
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4673): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4673
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4717): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4717
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4777): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4777
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4845): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4845
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4897): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4897
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(4969): variable "posicion8" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 4969
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5064): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5064
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5088): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5088
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5108): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5108
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5147): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5147
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5183): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5183
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5227): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5227
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5271): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5271
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5331): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5331
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5399): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5399
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5451): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5451
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5523): variable "posicion9" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5523
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5618): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5618
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5642): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5642
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5662): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5662
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5701): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5701
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5737): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5737
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5781): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5781
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5825): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5825
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5885): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5885
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(5953): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 5953
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6005): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6005
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6077): variable "posicion10" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6077
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6172): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6172
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6196): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6196
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6216): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6216
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6255): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6255
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6291): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6291
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6335): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6335
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6379): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6379
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6439): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6439
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6507): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6507
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6559): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6559
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6631): variable "posicion11" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6631
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6734): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6734
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6758): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6758
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6778): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6778
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6817): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6817
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6853): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6853
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6897): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6897
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(6941): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 6941
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7001): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7001
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7069): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7069
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7121): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7121
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7193): variable "posicion12" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7193
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7288): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7288
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7312): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7312
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7332): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7332
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7371): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7371
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7407): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7407
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7451): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7451
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7495): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7495
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7555): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7555
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7623): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7623
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7675): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7675
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7747): variable "posicion13" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7747
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7842): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7842
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7866): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7866
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7886): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7886
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7925): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7925
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(7961): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 7961
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8005): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8005
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8049): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8049
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8109): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8109
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8177): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8177
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8229): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8229
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8301): variable "posicion14" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8301
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8396): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8396
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8420): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8420
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8440): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8440
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8479): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8479
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8515): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8515
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8559): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8559
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8603): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8603
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8663): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8663
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8731): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8731
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8783): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8783
+Warning (10235): Verilog HDL Always Construct warning at moduloDibujo.sv(8855): variable "posicion15" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/moduloDibujo.sv Line: 8855
+Info (12128): Elaborating entity "moduloControladorVGA" for hierarchy "moduloControladorVGA:instanciaModuloControladorVGA" File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 92
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "escalaRojo[0]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 11
+    Warning (13410): Pin "escalaRojo[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 11
+    Warning (13410): Pin "escalaRojo[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 11
+    Warning (13410): Pin "escalaRojo[3]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 11
+    Warning (13410): Pin "escalaRojo[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 11
+    Warning (13410): Pin "escalaVerde[0]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 12
+    Warning (13410): Pin "escalaVerde[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 12
+    Warning (13410): Pin "escalaVerde[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 12
+    Warning (13410): Pin "escalaVerde[3]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 12
+    Warning (13410): Pin "escalaVerde[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 12
+    Warning (13410): Pin "escalaAzul[0]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 13
+    Warning (13410): Pin "escalaAzul[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 13
+    Warning (13410): Pin "escalaAzul[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 13
+    Warning (13410): Pin "escalaAzul[3]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 13
+    Warning (13410): Pin "escalaAzul[4]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 13
+    Warning (13410): Pin "sincronizacion" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio4/controladorVGA/controladorVGA.sv Line: 14
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 838 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 803 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 202 warnings
+    Info: Peak virtual memory: 4889 megabytes
+    Info: Processing ended: Tue Apr 04 16:39:59 2023
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:01:09
+
+

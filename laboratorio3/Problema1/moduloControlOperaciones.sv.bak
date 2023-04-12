@@ -1,0 +1,84 @@
+module ModuloControlOperaciones #(parameter cantidadBits = 4) 
+											(resultadoAND, resultadoOR, resultadoXOR, resultadoShiftL, resultadoShiftR,
+											resultadoSuma, resultadoResta, resultadoMultiplicacion, resultadoDivision, resultadoModulo,
+											seleccionOperacion,
+											resultadoSeleccionado,
+											displayOperacion
+											);
+	
+	input [cantidadBits-1:0] resultadoAND;
+	input [cantidadBits-1:0] resultadoOR;
+	input [cantidadBits-1:0] resultadoXOR;
+	input [cantidadBits-1:0] resultadoShiftL;
+	input [cantidadBits-1:0] resultadoShiftR;
+	input [cantidadBits-1:0] resultadoSuma;
+	input [cantidadBits-1:0] resultadoResta;
+	input [cantidadBits-1:0] resultadoMultiplicacion;
+	input [cantidadBits-1:0] resultadoDivision;
+	input [cantidadBits-1:0] resultadoModulo;
+	input [3:0] seleccionOperacion;
+	output [cantidadBits-1:0] resultadoSeleccionado;
+	output [6:0] displayOperacion;
+	
+	always @(seleccionOperacion) begin
+		case (seleccionOperacion)
+			4'b0000: 
+				begin
+					resultadoSeleccionado = resultadoAND;
+					displayOperacion = 7'b1111110;
+				end
+			4'b0001: 
+				begin
+					resultadoSeleccionado = resultadoOR;
+					displayOperacion = 7'b1001111;
+				end
+			4'b0010: 
+				begin
+					resultadoSeleccionado = resultadoXOR;
+					displayOperacion = 7'b0010010;
+				end
+			4'b0011: 
+				begin
+					resultadoSeleccionado = resultadoShiftL;
+					displayOperacion = 7'b0000110;
+				end
+			4'b0100: 
+				begin
+					resultadoSeleccionado = resultadoShiftR;
+					displayOperacion = 7'b1001100;
+				end
+			4'b0101: 
+				begin
+					resultadoSeleccionado = resultadoSuma;
+					displayOperacion = 7'b0100100;
+				end
+			4'b0110: 
+				begin
+					resultadoSeleccionado = resultadoResta;
+					displayOperacion = 7'b0100000;
+				end
+			4'b0111:
+				begin
+					resultadoSeleccionado = resultadoMultiplicacion;
+					displayOperacion = 7'b0001111;
+				end
+			4'b1000: 
+				begin
+					resultadoSeleccionado = resultadoDivision;
+					displayOperacion = 7'b0000000;
+				end
+			4'b1001: 
+				begin
+					resultadoSeleccionado = resultadoModulo;
+					displayOperacion = 7'b0001000;
+				end
+			default: 
+				begin
+					resultadoSeleccionado = resultadoAND;
+					displayOperacion = 7'b1111110;
+				end
+		endcase
+	end 
+
+	
+endmodule 

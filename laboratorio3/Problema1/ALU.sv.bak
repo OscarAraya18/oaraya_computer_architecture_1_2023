@@ -1,0 +1,39 @@
+module ALU #(parameter cantidadBits = 4) (operandoA, operandoB, seleccionOperacion, resultado, displayResultado, displayOperacion, N, Z, C, V);
+	
+	input [cantidadBits-1:0] operandoA;
+	input [cantidadBits-1:0] operandoB;
+	input [3:0] seleccionOperacion;
+	output [cantidadBits-1:0] resultado;
+	output [6:0] displayResultado;
+	output [6:0] displayOperacion;
+	output N, Z, C, V;
+	
+	wire [cantidadBits-1:0] resultadoAND;
+	wire [cantidadBits-1:0] resultadoOR;
+	wire [cantidadBits-1:0] resultadoXOR;
+	wire [cantidadBits-1:0] resultadoShiftL;
+	wire [cantidadBits-1:0] resultadoShiftR;
+	wire [cantidadBits-1:0] resultadoSuma;
+	wire [cantidadBits-1:0] resultadoResta;
+	wire [cantidadBits-1:0] resultadoMultiplicacion;
+	wire [cantidadBits-1:0] resultadoDivision;
+	wire [cantidadBits-1:0] resultadoModulo;
+
+	AND #(cantidadBits) AND0 (operandoA, operandoB, resultadoAND);
+	OR #(cantidadBits) OR0 (operandoA, operandoB, resultadoOR);
+	XOR #(cantidadBits) XOR0 (operandoA, operandoB, resultadoXOR);
+	shiftL #(cantidadBits) shiftL0 (operandoA, operandoB, resultadoShiftL);
+	shiftR #(cantidadBits) shiftR0 (operandoA, operandoB, resultadoShiftR);
+	Suma #(cantidadBits) Suma0 (operandoA, operandoB, resultadoSuma);
+	Resta #(cantidadBits) Resta0 (operandoA, operandoB, resultadoResta);
+	Multiplicacion #(cantidadBits) Multiplicacion0 (operandoA, operandoB, resultadoMultiplicacion);
+	Division #(cantidadBits) Division0 (operandoA, operandoB, resultadoDivision);
+	Modulo #(cantidadBits) Modulo0 (operandoA, operandoB, resultadoModulo);
+	
+	ModuloControlOperaciones #(cantidadBits) (resultadoAND, resultadoOR, resultadoXOR, resultadoShiftL, resultadoShiftR,
+															resultadoSuma, resultadoResta, resultadoMultiplicacion, resultadoDivision, resultadoModulo,
+															seleccionOperacion, resultado, displayOperacion);
+	
+
+	
+endmodule 

@@ -1,0 +1,7 @@
+module moduloReloj25MHz (reloj, reinicio, reloj25MHz);
+	input logic reloj;
+	input logic reinicio;
+	
+	output logic reloj25MHz;
+
+endmodule 

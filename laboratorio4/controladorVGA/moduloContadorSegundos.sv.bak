@@ -1,0 +1,4 @@
+module moduloContadorSegundos (reloj, reinicio, cantidadSegundos);
+
+
+endmodule

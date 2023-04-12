@@ -1,0 +1,16 @@
+module Problema1 (operandoA, operandoB, seleccionOperacion, resultado, displayResultado, displayOperacion, N, Z, C, V);
+
+	input [3:0] operandoA;
+	input [3:0] operandoB;
+	input [3:0] seleccionOperacion;	
+	output [3:0] resultado;
+	output [6:0] displayResultado;
+	output [6:0] displayOperacion;
+	output N, Z, C, V;
+		
+	ALU #(4) ALU0 (operandoA, operandoB, seleccionOperacion, resultado, displayResultado, displayOperacion, N, Z, C, V);
+
+endmodule 
+
+						
+					
