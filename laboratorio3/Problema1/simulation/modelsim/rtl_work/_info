@@ -1,0 +1,362 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/simulation/modelsim
+vALU
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1681323871
+!i10b 1
+!s100 db[C:<]JCO`W>Y7SE4UA01
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IU3V?ekL8H21zeo?>XSc:60
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1662197184
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/ALU.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/ALU.sv
+!i122 11
+L0 1 33
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1681323871.000000
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/ALU.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1
+Z9 tCvgOpt 0
+n@a@l@u
+vmoduloAND
+R1
+R2
+!i10b 1
+!s100 z?0hzc?ZAf1BiNO?1lNL_0
+R3
+IiP`]LPii@;[mTT`RAd5PW2
+R4
+S1
+R0
+w1662192279
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloAND.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloAND.sv
+!i122 10
+Z10 L0 1 6
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloAND.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloAND.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@a@n@d
+vmoduloControlOperaciones
+R1
+R2
+!i10b 1
+!s100 l:bd_QCghBc4fKZ4TiND60
+R3
+IDAXoPkD[o;eO>4:>=6Zn70
+R4
+S1
+R0
+w1681302077
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloControlOperaciones.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloControlOperaciones.sv
+!i122 9
+Z11 L0 1 36
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloControlOperaciones.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloControlOperaciones.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@control@operaciones
+vmoduloDivision
+R1
+R2
+!i10b 1
+!s100 DH1P:@K0I1nh7R4D4B?JG3
+R3
+Ij_QDZN`fRIYU8kV0_^=5;3
+R4
+S1
+R0
+w1681302313
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDivision.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDivision.sv
+!i122 8
+L0 1 11
+R5
+r1
+!s85 0
+31
+Z12 !s108 1681323870.000000
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDivision.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDivision.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@division
+vmoduloModulo
+R1
+Z13 !s110 1681323870
+!i10b 1
+!s100 AQnzd]1?h7gad7@DT6_YD3
+R3
+I^8MAbUPAnKS2L7f4[JF`70
+R4
+S1
+R0
+w1662192047
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloModulo.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloModulo.sv
+!i122 7
+R10
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloModulo.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloModulo.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@modulo
+vmoduloMultiplicacion
+R1
+R13
+!i10b 1
+!s100 TQ054boc6@BcIH6@NLKaf2
+R3
+I7cnXzc;<jRCRf_eb;P1<F2
+R4
+S1
+R0
+w1662191982
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloMultiplicacion.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloMultiplicacion.sv
+!i122 6
+R10
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloMultiplicacion.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloMultiplicacion.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@multiplicacion
+vmoduloOR
+R1
+R13
+!i10b 1
+!s100 BSOEJF;^I[MlP[TiE31f`0
+R3
+IFNZ;hM:MVn9>_Y3QgK9zC2
+R4
+S1
+R0
+w1661487792
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloOR.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloOR.sv
+!i122 5
+R10
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloOR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloOR.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@o@r
+vmoduloResta
+R1
+R13
+!i10b 1
+!s100 ZDnjI7BNd::U=UAJKDlh_2
+R3
+IkQ`i4Y_z_bG@e9?^=`X^X1
+R4
+S1
+R0
+w1681302044
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloResta.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloResta.sv
+!i122 4
+L0 1 35
+R5
+r1
+!s85 0
+31
+R12
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloResta.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloResta.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@resta
+vmoduloShiftL
+R1
+Z14 !s110 1681323869
+!i10b 1
+!s100 f=@H^V_HYM7JY:^VcW6Q73
+R3
+Ij:EAnml<EhR?EBR`OCMz92
+R4
+S1
+R0
+w1661462516
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftL.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftL.sv
+!i122 3
+R10
+R5
+r1
+!s85 0
+31
+Z15 !s108 1681323869.000000
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftL.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftL.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@shift@l
+vmoduloShiftR
+R1
+R14
+!i10b 1
+!s100 3WQVEczSGRAWjS[JX@=?_3
+R3
+IGM9dVZ2eZA[jl=G`[>a@M3
+R4
+S1
+R0
+w1661462502
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftR.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftR.sv
+!i122 2
+R10
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftR.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@shift@r
+vmoduloSuma
+R1
+R14
+!i10b 1
+!s100 @lJ>Wc>MlmRJZTHRU92eN3
+R3
+I=l8^Ue7@41QY_j5cGz[Sz0
+R4
+S1
+R0
+w1681301791
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloSuma.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloSuma.sv
+!i122 1
+R11
+R5
+r1
+!s85 0
+31
+R15
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloSuma.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloSuma.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@suma
+vmoduloXOR
+R1
+R14
+!i10b 1
+!s100 nEYDEOZ@4=^J3KgNXR6i`3
+R3
+IjDZVDl<CWmiP^74SA1gcg0
+R4
+S1
+R0
+w1661462482
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloXOR.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloXOR.sv
+!i122 0
+R10
+R5
+r1
+!s85 0
+31
+!s108 1681323868.000000
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloXOR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloXOR.sv|
+!i113 1
+R7
+R8
+R9
+nmodulo@x@o@r
+vProblema1
+R1
+R2
+!i10b 1
+!s100 o7SXg2R;]eX>5>:jPcz370
+R3
+I??El@QEVNK4PdYXZ[aFWe1
+R4
+S1
+R0
+w1662235182
+8C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/Problema1.sv
+FC:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/Problema1.sv
+!i122 12
+L0 1 19
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/Problema1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1|C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/Problema1.sv|
+!i113 1
+R7
+R8
+R9
+n@problema1

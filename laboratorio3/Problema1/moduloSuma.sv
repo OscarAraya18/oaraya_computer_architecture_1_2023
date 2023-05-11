@@ -1,7 +1,7 @@
 module moduloSuma #(parameter cantidadBits = 5) (operandoA, operandoB, resultado);
 	input [cantidadBits-1:0] operandoA;
 	input [cantidadBits-1:0] operandoB;
-	output [cantidadBits-2:0] resultado;
+	output logic [cantidadBits-2:0] resultado;
 	always @(operandoA, operandoB) begin
 		if ((operandoA[cantidadBits-1] == 1'b0) && (operandoB[cantidadBits-1] == 1'b0)) begin
 			resultado = operandoA[cantidadBits-2:0] + operandoB[cantidadBits-2:0];

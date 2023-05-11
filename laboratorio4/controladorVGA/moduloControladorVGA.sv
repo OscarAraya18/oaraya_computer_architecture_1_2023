@@ -224,7 +224,6 @@ module moduloControladorVGA (reloj, reinicio, colorEntrada, coordenadaDibujarX, 
 		end
 	end
 	
-	
 	// MAPEO DE LAS SALIDAS AL CABLE VGA.
 	assign sincronizacionHorizontal = registroSincronizacionHorizontal;
 	assign sincronizacionVertical = registroSincronizacionVertical;

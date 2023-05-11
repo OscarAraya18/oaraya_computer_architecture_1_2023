@@ -1,5 +1,5 @@
 module moduloDibujo 
-(reloj, reinicio, 
+(reloj, reinicio,
 coordenadaDibujarX, coordenadaDibujarY, 
 posicion0, posicion1, posicion2, posicion3, posicion4, posicion5, posicion6, posicion7, 
 posicion8, posicion9, posicion10, posicion11, posicion12, posicion13, posicion14, posicion15,
@@ -7,6 +7,7 @@ colorCoordenadaDibujar);
 
 	input logic reloj;
 	input logic reinicio;
+	
 	input logic [9:0] coordenadaDibujarX;
 	input logic [9:0] coordenadaDibujarY;
 	
@@ -47,6 +48,8 @@ colorCoordenadaDibujar);
 	always @(coordenadaDibujarX, coordenadaDibujarY) begin
 		if (reinicio == 1'b1) begin
 		end
+		
+		else begin
 		if ((coordenadaDibujarX >= 10'd0) && (coordenadaDibujarX <= 10'd31)) colorCoordenadaDibujar = COLOR_NEGRO;
 		else if ((coordenadaDibujarX >= 10'd153) && (coordenadaDibujarX <= 10'd183)) colorCoordenadaDibujar = COLOR_NEGRO;
 		else if ((coordenadaDibujarX >= 10'd305) && (coordenadaDibujarX <= 10'd335)) colorCoordenadaDibujar = COLOR_NEGRO; 
@@ -8950,6 +8953,7 @@ colorCoordenadaDibujar);
 			
 			else colorCoordenadaDibujar = COLOR_BLANCO;
 			
+		end
 		end
 	end
 	

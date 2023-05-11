@@ -1,0 +1,225 @@
+module moduloControladorJuego(reloj, reinicio, botonIniciarJuego, botonArriba, botonAbajo, botonIzquierda, botonDerecha, tableroJuego, estadoJuego);
+    input logic reloj;
+    input logic reinicio;
+    input logic botonIniciarJuego;
+    input logic botonArriba;
+    input logic botonAbajo;
+    input logic botonIzquierda;
+    input logic botonDerecha;
+    output reg [9:0] tableroJuego [3:0][3:0];
+    output reg [1:0] estadoJuego;
+
+    reg [2:0] ESTADO_ACTUAL;
+    reg [21:0] CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA;
+    reg [18:0] CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA;
+    reg [1:0] POSICION_COLUMNA_ALEATORIA;
+    reg [1:0] POSICION_FILA_ALEATORIA;
+    reg FILA_DISPONIBLE;
+    reg QUEDA_POSICION_DISPONIBLE;
+
+    reg [1:0] NUEVA_FILA_TRAS_MOVIMIENTO;
+    reg [1:0] NUEVA_COLUMNA_TRAS_MOVIMIENTO;
+
+    parameter [3:0] ESTADO_ESPERANDO_INICIAR_JUEGO = 4'b0000;
+    parameter [3:0] ESTADO_INICIANDO_JUEGO = 4'b0001;
+    parameter [3:0] ESTADO_ESPERANDO_MOVIMIENTO = 4'b0010;
+    parameter [3:0] ESTADO_MOVIENDO_HACIA_ARRIBA = 4'b0011;
+    parameter [3:0] ESTADO_MOVIENDO_HACIA_ABAJO = 4'b0100;
+    parameter [3:0] ESTADO_MOVIENDO_HACIA_IZQUIERDA = 4'b0101;
+    parameter [3:0] ESTADO_MOVIENDO_HACIA_DERECHA = 4'b0110;
+    parameter [3:0] ESTADO_VERIFICANDO_GANAR_PERDER = 4'b0111;
+    parameter [3:0] ESTADO_GENERANDO_POSICION_ALEATORIA = 4'b1000;
+    parameter [3:0] ESTADO_GANAR = 4'b1001;
+    parameter [3:0] ESTADO_PERDER = 4'b1010;
+
+    // INICIO DE LA TRANSICION DE ESTADOS.
+    always @(posedge reloj) begin
+        if (reinicio == 1'b1) begin
+            for (i = 0; i < 4; i = i + 1) begin
+                for (j = 0; j < 4; j = j + 1) begin
+                    tableroJuego[i][j] <= {i,j,4'd0000}; // AQUI QUIERO QUE GUARDE FILA, COLUMNA, Y CEROS
+                end
+            end
+            estadoJuego <= 2'b00;
+            ESTADO_ACTUAL <= ESTADO_ESPERANDO_INICIAR_JUEGO;
+        end
+        else begin
+            if (ESTADO_ACTUAL == ESTADO_INICIANDO_JUEGO) begin
+                tableroJuego[POSICION_FILA_ALEATORIA][POSICION_COLUMNA_ALEATORIA] <= {tableroJuego[POSICION_FILA_ALEATORIA][POSICION_COLUMNA_ALEATORIA][9:4], 4'b0001};
+                ESTADO_ACTUAL <= ESTADO_ESPERANDO_MOVIMIENTO;
+            end
+
+            else if (ESTADO_ACTUAL == ESTADO_MOVIENDO_HACIA_ARRIBA) begin
+                
+                
+                // ESTADO_ACTUAL <= ESTADO_ESPERANDO_MOVIMIENTO;
+            end
+
+            else if (ESTADO_ACTUAL == ESTADO_ESPERANDO_MOVIMIENTO) begin
+                ESTADO_ACTUAL <= ESTADO_ESPERANDO_MOVIMIENTO;
+            end
+
+            else if (ESTADO_ACTUAL == ESTADO_GENERANDO_POSICION_ALEATORIA) begin
+                if (FILA_DISPONIBLE == 1'b0) begin
+                    for (i = 0; i < 4; i = i + 1) begin
+                        if (tableroJuego[POSICION_FILA_ALEATORIA][i][3:0] == 4'b0000) begin
+                            FILA_DISPONIBLE <= 1'b1;
+                        end
+                    end
+                    if (FILA_DISPONIBLE == 1'b0) begin
+                        if (POSICION_FILA_ALEATORIA == 2'd3) begin
+                            POSICION_FILA_ALEATORIA <= 2'd0;
+                        end
+                        else begin
+                            POSICION_FILA_ALEATORIA <= POSICION_FILA_ALEATORIA + 1'b1;
+                        end
+                    end
+                    ESTADO_ACTUAL <= ESTADO_GENERANDO_POSICION_ALEATORIA;
+                end
+                else begin
+                    if (tableroJuego[POSICION_FILA_ALEATORIA][POSICION_COLUMNA_ALEATORIA][3:0] != 4'b0000) begin
+                        if (POSICION_COLUMNA_ALEATORIA == 2'd3) begin
+                            POSICION_COLUMNA_ALEATORIA <= 2'd0;
+                        end
+                        else begin
+                            POSICION_COLUMNA_ALEATORIA <= POSICION_COLUMNA_ALEATORIA + 1'b1;
+                        end
+                        ESTADO_ACTUAL <= ESTADO_GENERANDO_POSICION_ALEATORIA;
+                    end
+                    else begin
+                        tableroJuego[POSICION_FILA_ALEATORIA][POSICION_COLUMNA_ALEATORIA][3:0] <= 4'b0001;
+                        ESTADO_ACTUAL <= ESTADO_VERIFICANDO_GANAR_PERDER;
+                    end
+                end
+            end
+
+            else if (ESTADO_ACTUAL == ESTADO_VERIFICANDO_GANAR_PERDER) begin
+                for (i = 0; i < 4; i = i + 1) begin
+                    for (j = 0; j < 4; j = j + 1) begin
+                        if (tableroJuego[i][j][3:0] == 4'b1011) begin
+                            ESTADO_ACTUAL <= ESTADO_GANAR;
+                        end
+                        if (tableroJuego[i][j][3:0] == 4'b0000) begin
+                            QUEDA_POSICION_DISPONIBLE <= 1'b1;
+                        end
+                    end
+                    if (QUEDA_POSICION_DISPONIBLE == 1'b0) begin
+                        ESTADO_ACTUAL <= ESTADO_PERDER;
+                    end
+                    else ESTADO_ACTUAL <= ESTADO_ESPERANDO_MOVIMIENTO;
+                end
+            end
+
+        end
+    end
+    // FIN DE LA TRANSICION DE ESTADOS.
+
+    // INICIO DEL CONTROL DE LOS CONTADORES.
+    always @(posedge reloj) begin
+        if (reinicio == 1'b1) begin
+            CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA <= 0;
+            CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA <= 0;
+        end
+        else begin
+            if (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA > 22'd4000000) begin
+                CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA <= 0;
+            end
+            else begin
+                CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA <= CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA + 1'b1;
+            end
+            if (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA > 19'd400000) begin
+                CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA <= 0;
+            end
+            else begin
+                CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA <= CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA + 1'b1;
+            end
+        end
+    end
+    // FIN DEL CONTROL DE LOS CONTADORES.
+
+    // INICIO DEL CONTROL DE LAS POSICIONES.
+    always @(posedge reloj) begin
+        if (reinicio == 1'b1) begin
+            POSICION_COLUMNA_ALEATORIA <= 2'd0;
+            POSICION_FILA_ALEATORIA <= 2'd3;
+            FILA_DISPONIBLE <= 1'b0;
+            QUEDA_POSICION_DISPONIBLE <= 1'b0;
+        end
+        else begin
+            if ((ESTADO_ACTUAL != ESTADO_MOVIENDO_HACIA_ARRIBA) && (ESTADO_ACTUAL != ESTADO_MOVIENDO_HACIA_ABAJO) && (ESTADO_ACTUAL != ESTADO_MOVIENDO_HACIA_IZQUIERDA) && (ESTADO_ACTUAL != ESTADO_MOVIENDO_HACIA_DERECHA)) begin
+                NUEVA_COLUMNA_TRAS_MOVIMIENTO <= 2'd0;
+                NUEVA_FILA_TRAS_MOVIMIENTO <= 2'd0;
+            end 
+
+            if (ESTADO_ACTUAL != ESTADO_VERIFICANDO_GANAR_PERDER) begin
+                QUEDA_POSICION_DISPONIBLE <= 1'b0;
+            end
+
+            if (ESTADO_ACTUAL != ESTADO_GENERANDO_POSICION_ALEATORIA) begin
+                FILA_DISPONIBLE <= 1'b0;
+
+                if ((CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA >= 22'd0) && (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA < 22'd1000000)) begin
+                    POSICION_COLUMNA_ALEATORIA <= 2'd3;
+                end
+                else if ((CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA >= 22'd1000000) && (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA < 22'd2000000)) begin
+                    POSICION_COLUMNA_ALEATORIA <= 2'd0;
+                end
+                else if ((CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA >= 22'd2000000) && (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA < 22'd3000000)) begin
+                    POSICION_COLUMNA_ALEATORIA <= 2'd2;
+                end
+                else if ((CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA >= 22'd3000000) && (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_COLUMNA_ALEATORIA <= 22'd4000000)) begin
+                    POSICION_COLUMNA_ALEATORIA <= 2'd1;
+                end
+                else POSICION_COLUMNA_ALEATORIA <= 2'd0;
+
+                if ((CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA >= 19'd0) && (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA < 19'd100000)) begin
+                    POSICION_FILA_ALEATORIA <= 2'd0;
+                end
+                else if ((CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA >= 19'd100000) && (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA < 19'd200000)) begin
+                    POSICION_FILA_ALEATORIA <= 2'd1;
+                end
+                else if ((CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA >= 19'd200000) && (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA < 19'd300000)) begin
+                    POSICION_FILA_ALEATORIA <= 2'd2;
+                end
+                else if ((CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA >= 19'd300000) && (CANTIDAD_CICLOS_RELOJ_GENERADOR_POSICION_FILA_ALEATORIA <= 19'd400000)) begin
+                    POSICION_FILA_ALEATORIA <= 2'd3;
+                end
+                else POSICION_FILA_ALEATORIA <= 2'd3;
+            end
+        end
+    end
+    // FIN DEL CONTROL DE LAS POSICIONES.
+
+    // INICIO DEL CONTROL DEL INICIO DEL JUEGO.
+    always @(posedge botonIniciarJuego) begin
+        if (ESTADO_ACTUAL == ESTADO_ESPERANDO_INICIAR_JUEGO) begin
+            ESTADO_ACTUAL <= ESTADO_INICIANDO_JUEGO;
+        end
+    end
+    // FIN DEL CONTROL DEL INICIO DEL JUEGO.
+
+    // INICIO DEL CONTROL DE MOVIMIENTO.
+    always @(posedge botonArriba) begin
+        if (ESTADO_ACTUAL == ESTADO_ESPERANDO_MOVIMIENTO) begin
+            ESTADO_ACTUAL <= ESTADO_MOVIENDO_HACIA_ARRIBA;
+        end
+    end
+    always @(posedge botonAbajo) begin
+        if (ESTADO_ACTUAL == ESTADO_ESPERANDO_MOVIMIENTO) begin
+            ESTADO_ACTUAL <= ESTADO_MOVIENDO_HACIA_ABAJO;
+        end
+    end
+    always @(posedge botonIzquierda) begin
+        if (ESTADO_ACTUAL == ESTADO_ESPERANDO_MOVIMIENTO) begin
+            ESTADO_ACTUAL <= ESTADO_MOVIENDO_HACIA_IZQUIERDA;
+        end
+    end
+    always @(posedge botonDerecha) begin
+        if (ESTADO_ACTUAL == ESTADO_ESPERANDO_MOVIMIENTO) begin
+            ESTADO_ACTUAL <= ESTADO_MOVIENDO_HACIA_DERECHA;
+        end
+    end
+    // FIN DEL CONTROL DE MOVIMIENTO.
+
+ 
+endmodule

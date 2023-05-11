@@ -1,5 +1,5 @@
 EDA Netlist Writer report for Problema1
-Sat Sep 03 13:16:48 2022
+Wed Apr 12 06:29:13 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Sep 03 13:16:48 2022 ;
+; EDA Netlist Writer Status ; Successful - Wed Apr 12 06:29:13 2023 ;
 ; Revision Name             ; Problema1                             ;
 ; Top-level Entity Name     ; Problema1                             ;
 ; Family                    ; Cyclone V                             ;
@@ -45,34 +45,34 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------+---------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Simulation Settings                                                                                                          ;
-+---------------------------------------------------------------------------------------------------+--------------------------+
-; Option                                                                                            ; Setting                  ;
-+---------------------------------------------------------------------------------------------------+--------------------------+
-; Tool Name                                                                                         ; ModelSim (SystemVerilog) ;
-; Generate functional simulation netlist                                                            ; On                       ;
-; Truncate long hierarchy paths                                                                     ; Off                      ;
-; Map illegal HDL characters                                                                        ; Off                      ;
-; Flatten buses into individual nodes                                                               ; Off                      ;
-; Maintain hierarchy                                                                                ; Off                      ;
-; Bring out device-wide set/reset signals as ports                                                  ; Off                      ;
-; Enable glitch filtering                                                                           ; Off                      ;
-; Do not write top level VHDL entity                                                                ; Off                      ;
-; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                      ;
-; Architecture name in VHDL output netlist                                                          ; structure                ;
-; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                      ;
-; Generate third-party EDA tool command script for gate-level simulation                            ; Off                      ;
-+---------------------------------------------------------------------------------------------------+--------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                                 ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
+; Option                                                                                            ; Setting                         ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (SystemVerilog) ;
+; Generate functional simulation netlist                                                            ; On                              ;
+; Truncate long hierarchy paths                                                                     ; Off                             ;
+; Map illegal HDL characters                                                                        ; Off                             ;
+; Flatten buses into individual nodes                                                               ; Off                             ;
+; Maintain hierarchy                                                                                ; Off                             ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                             ;
+; Enable glitch filtering                                                                           ; Off                             ;
+; Do not write top level VHDL entity                                                                ; Off                             ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                             ;
+; Architecture name in VHDL output netlist                                                          ; structure                       ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                             ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                             ;
++---------------------------------------------------------------------------------------------------+---------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                                        ;
-+---------------------------------------------------------------------------------------------------+
-; Generated Files                                                                                   ;
-+---------------------------------------------------------------------------------------------------+
-; C:/Users/osaro/OneDrive/Escritorio/CE3201Laboratorio3/Problema1/simulation/modelsim/Problema1.svo ;
-+---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                                      ;
++---------------------------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                                                 ;
++---------------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/simulation/modelsim/Problema1.svo ;
++---------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -81,13 +81,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Sep 03 13:16:46 2022
+    Info: Processing started: Wed Apr 12 06:29:10 2023
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off Problema1 -c Problema1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file Problema1.svo in folder "C:/Users/osaro/OneDrive/Escritorio/CE3201Laboratorio3/Problema1/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file Problema1.svo in folder "C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
     Info: Peak virtual memory: 4726 megabytes
-    Info: Processing ended: Sat Sep 03 13:16:49 2022
+    Info: Processing ended: Wed Apr 12 06:29:13 2023
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

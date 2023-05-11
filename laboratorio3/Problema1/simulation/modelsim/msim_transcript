@@ -1,0 +1,170 @@
+# Reading pref.tcl
+# do Problema1_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloXOR.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:28 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloXOR.sv 
+# -- Compiling module moduloXOR
+# 
+# Top level modules:
+# 	moduloXOR
+# End time: 12:24:29 on Apr 12,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloSuma.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:29 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloSuma.sv 
+# -- Compiling module moduloSuma
+# 
+# Top level modules:
+# 	moduloSuma
+# End time: 12:24:29 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftR.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:29 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftR.sv 
+# -- Compiling module moduloShiftR
+# 
+# Top level modules:
+# 	moduloShiftR
+# End time: 12:24:29 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftL.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:29 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloShiftL.sv 
+# -- Compiling module moduloShiftL
+# 
+# Top level modules:
+# 	moduloShiftL
+# End time: 12:24:29 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloResta.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:30 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloResta.sv 
+# -- Compiling module moduloResta
+# 
+# Top level modules:
+# 	moduloResta
+# End time: 12:24:30 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloOR.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:30 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloOR.sv 
+# -- Compiling module moduloOR
+# 
+# Top level modules:
+# 	moduloOR
+# End time: 12:24:30 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloMultiplicacion.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:30 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloMultiplicacion.sv 
+# -- Compiling module moduloMultiplicacion
+# 
+# Top level modules:
+# 	moduloMultiplicacion
+# End time: 12:24:30 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloModulo.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:30 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloModulo.sv 
+# -- Compiling module moduloModulo
+# 
+# Top level modules:
+# 	moduloModulo
+# End time: 12:24:30 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDivision.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:30 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDivision.sv 
+# -- Compiling module moduloDivision
+# 
+# Top level modules:
+# 	moduloDivision
+# End time: 12:24:31 on Apr 12,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloControlOperaciones.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:31 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloControlOperaciones.sv 
+# -- Compiling module moduloControlOperaciones
+# 
+# Top level modules:
+# 	moduloControlOperaciones
+# End time: 12:24:31 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloAND.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:31 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloAND.sv 
+# -- Compiling module moduloAND
+# 
+# Top level modules:
+# 	moduloAND
+# End time: 12:24:31 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/ALU.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:31 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/ALU.sv 
+# -- Compiling module ALU
+# 
+# Top level modules:
+# 	ALU
+# End time: 12:24:31 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/Problema1.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:31 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/Problema1.sv 
+# -- Compiling module Problema1
+# 
+# Top level modules:
+# 	Problema1
+# End time: 12:24:31 on Apr 12,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:24:31 on Apr 12,2023
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1" C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv 
+# -- Compiling module moduloDisplayResultado
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(12): (vlog-2110) Illegal reference to net "displayResultado3".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(13): (vlog-2110) Illegal reference to net "displayResultado2".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(14): (vlog-2110) Illegal reference to net "displayResultado1".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(15): (vlog-2110) Illegal reference to net "displayResultado0".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(19): (vlog-2110) Illegal reference to net "displayResultado3".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(20): (vlog-2110) Illegal reference to net "displayResultado3".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(21): (vlog-2110) Illegal reference to net "displayResultado3".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(24): (vlog-2110) Illegal reference to net "displayResultado2".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(25): (vlog-2110) Illegal reference to net "displayResultado2".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(26): (vlog-2110) Illegal reference to net "displayResultado2".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(29): (vlog-2110) Illegal reference to net "displayResultado1".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(30): (vlog-2110) Illegal reference to net "displayResultado1".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(31): (vlog-2110) Illegal reference to net "displayResultado1".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(34): (vlog-2110) Illegal reference to net "displayResultado0".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(35): (vlog-2110) Illegal reference to net "displayResultado0".
+# ** Error: C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1/moduloDisplayResultado.sv(36): (vlog-2110) Illegal reference to net "displayResultado0".
+# End time: 12:24:32 on Apr 12,2023, Elapsed time: 0:00:01
+# Errors: 16, Warnings: 0
+# ** Error: C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Problema1_run_msim_rtl_verilog.do line 21
+# C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/osaro/OneDrive/Escritorio/oaraya_computer_architecture_1_2023/laboratorio3/Problema1 {C:/Users/osaro/OneDrive/Esc..."

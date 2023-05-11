@@ -16,31 +16,17 @@ module controladorVGA (reloj, reinicio, botonArriba, botonAbajo, botonIzquierda,
 	output logic parpadeoVGA;
 	
 	wire reloj25MHz;
-	wire logic [8:0] colorCoordenadaDibujar;
-	wire logic [9:0] coordenadaDibujarX;
-	wire logic [9:0] coordenadaDibujarY;
+	wire [8:0] colorCoordenadaDibujar;
+	wire [9:0] coordenadaDibujarX;
+	wire [9:0] coordenadaDibujarY;
 	
-	reg [3:0] cantidadSegundosTranscurridos;
-	wire [2:0] botonPresionado;
+	wire [3:0] tableroJuego [3:0][3:0];
+	wire [1:0] estadoJuego;
 	
-	always @(botonPresionado) begin
-		if (botonPresionado != 3'b000) begin
-			if (cantidadSegundosTranscurridos > 4'b1011) cantidadSegundosTranscurridos <= 1'b0;
-			else cantidadSegundosTranscurridos <= cantidadSegundosTranscurridos + 1'b1;
-		end
-		else cantidadSegundosTranscurridos <= cantidadSegundosTranscurridos;
-	end
-	
-	moduloControladorBotones
-	(
-	.reloj (reloj),
-	.reinicio (reinicio),
-	.botonArriba (botonArriba),
-	.botonAbajo (botonAbajo),
-	.botonIzquierda (botonIzquierda),
-	.botonDerecha (botonDerecha),
-	.botonPresionado (botonPresionado)
-	);
+	wire botonArribaCorregido;
+	wire botonAbajoCorregido;
+	wire botonIzquierdaCorregido;
+	wire botonDerechaCorregido;
 	
 	moduloReloj25MHz instanciaModuloReloj25MHz
 	(
@@ -49,28 +35,52 @@ module controladorVGA (reloj, reinicio, botonArriba, botonAbajo, botonIzquierda,
 	.reloj25MHz (reloj25MHz)
 	);
 	
+	moduloControladorBotones instanciaModuloControladorBotones
+	(
+	.entradaBotonArriba (botonArriba),
+	.entradaBotonAbajo (botonAbajo),
+	.entradaBotonIzquierda (botonIzquierda),
+	.entradaBotonDerecha (botonDerecha),
+	.salidaBotonArriba (botonArribaCorregido),
+	.salidaBotonAbajo (botonAbajoCorregido),
+	.salidaBotonIzquierda (botonIzquierdaCorregido),
+	.salidaBotonDerecha (botonDerechaCorregido)
+	);
+	
+	moduloControladorJuego instanciaModuloControladorJuego
+	(
+	.reloj (reloj),
+	.reinicio (reinicio),
+	.botonArriba (botonArribaCorregido),
+	.botonAbajo (botonAbajoCorregido),
+	.botonIzquierda (botonIzquierdaCorregido),
+	.botonDerecha (botonDerechaCorregido),
+	.tableroJuego (tableroJuego),
+	.estadoJuego (estadoJuego)
+	);
+	
 	moduloDibujo instanciaModuloDibujo
 	(
 	.reloj (reloj),
 	.reinicio (reinicio),
 	.coordenadaDibujarX (coordenadaDibujarX),
 	.coordenadaDibujarY (coordenadaDibujarY),
-	.posicion0(cantidadSegundosTranscurridos),
-	.posicion1(cantidadSegundosTranscurridos),
-	.posicion2(cantidadSegundosTranscurridos),
-	.posicion3(cantidadSegundosTranscurridos),
-	.posicion4(cantidadSegundosTranscurridos),
-	.posicion5(cantidadSegundosTranscurridos),
-	.posicion6(cantidadSegundosTranscurridos),
-	.posicion7(cantidadSegundosTranscurridos),
-	.posicion8(cantidadSegundosTranscurridos),
-	.posicion9(cantidadSegundosTranscurridos),
-	.posicion10(cantidadSegundosTranscurridos),
-	.posicion11(cantidadSegundosTranscurridos),
-	.posicion12(cantidadSegundosTranscurridos),
-	.posicion13(cantidadSegundosTranscurridos),
-	.posicion14(cantidadSegundosTranscurridos),
-	.posicion15(cantidadSegundosTranscurridos),
+	.posicion0(tableroJuego[0][0]),
+	.posicion1(tableroJuego[0][1]),
+	.posicion2(tableroJuego[0][2]),
+	.posicion3(tableroJuego[0][3]),
+	.posicion4(tableroJuego[1][0]),
+	.posicion5(tableroJuego[1][1]),
+	.posicion6(tableroJuego[1][2]),
+	.posicion7(tableroJuego[1][3]),
+	.posicion8(tableroJuego[2][0]),
+	.posicion9(tableroJuego[2][1]),
+	.posicion10(tableroJuego[2][2]),
+	.posicion11(tableroJuego[2][3]),
+	.posicion12(tableroJuego[3][0]),
+	.posicion13(tableroJuego[3][1]),
+	.posicion14(tableroJuego[3][2]),
+	.posicion15(tableroJuego[3][3]),
 	.colorCoordenadaDibujar (colorCoordenadaDibujar)
 	);
 	

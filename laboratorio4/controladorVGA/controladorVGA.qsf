@@ -108,9 +108,10 @@ set_location_assignment PIN_AF28 -to displaySieteSegmentos[4]
 set_location_assignment PIN_AG28 -to displaySieteSegmentos[5]
 set_location_assignment PIN_AH28 -to displaySieteSegmentos[6]
 set_global_assignment -name SYSTEMVERILOG_FILE moduloDibujo.sv
-set_global_assignment -name SYSTEMVERILOG_FILE moduloControladorBotones.sv
 set_location_assignment PIN_Y16 -to botonArriba
 set_location_assignment PIN_W15 -to botonAbajo
 set_location_assignment PIN_AA14 -to botonDerecha
 set_location_assignment PIN_AA15 -to botonIzquierda
+set_global_assignment -name SYSTEMVERILOG_FILE moduloControladorJuego.sv
+set_global_assignment -name SYSTEMVERILOG_FILE moduloControladorBotones.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

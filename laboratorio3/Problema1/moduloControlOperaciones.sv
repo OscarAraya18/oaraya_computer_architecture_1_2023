@@ -15,8 +15,8 @@ module moduloControlOperaciones #(parameter cantidadBits = 5)
 	input [cantidadBits-2:0] resultadoDivision;
 	input [cantidadBits-2:0] resultadoModulo;
 	input [3:0] seleccionOperacion;
-	output [cantidadBits-2:0] resultadoSeleccionado;
-	output [6:0] displayOperacion;
+	output logic [cantidadBits-2:0] resultadoSeleccionado;
+	output logic [6:0] displayOperacion;
 	always @(seleccionOperacion, resultadoAND, resultadoOR, resultadoXOR, resultadoShiftL, resultadoShiftR,
 				resultadoSuma, resultadoResta, resultadoMultiplicacion, resultadoDivision, resultadoModulo) begin
 		case (seleccionOperacion)

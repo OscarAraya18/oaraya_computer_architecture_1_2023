@@ -1,5 +1,5 @@
 Timing Analyzer report for controladorVGA
-Tue Apr 04 16:45:50 2023
+Thu May 11 07:31:27 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -100,18 +100,18 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 2.07        ;
+; Average used               ; 1.47        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  17.0%      ;
-;     Processor 3            ;  16.9%      ;
-;     Processor 4            ;  16.7%      ;
-;     Processor 5            ;  14.0%      ;
-;     Processor 6            ;  14.0%      ;
-;     Processor 7            ;  14.0%      ;
-;     Processor 8            ;  14.0%      ;
+;     Processor 2            ;   7.4%      ;
+;     Processor 3            ;   7.2%      ;
+;     Processor 4            ;   7.2%      ;
+;     Processor 5            ;   6.4%      ;
+;     Processor 6            ;   6.4%      ;
+;     Processor 7            ;   6.4%      ;
+;     Processor 8            ;   6.4%      ;
 +----------------------------+-------------+
 
 
@@ -120,21 +120,19 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------------------+
 ; Clock Name                                            ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                                   ;
 +-------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------------------+
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { moduloControladorBotones:comb_19|botonPresionado[0] }   ;
 ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz } ;
 ; reloj                                                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { reloj }                                                 ;
 +-------------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                                                                                          ;
-+------------+-----------------+-------------------------------------------------------+------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note                                                 ;
-+------------+-----------------+-------------------------------------------------------+------------------------------------------------------+
-; 102.6 MHz  ; 102.6 MHz       ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ;                                                      ;
-; 307.13 MHz ; 307.13 MHz      ; moduloControladorBotones:comb_19|botonPresionado[0]   ;                                                      ;
-; 405.35 MHz ; 361.79 MHz      ; reloj                                                 ; limit due to low minimum pulse width violation (tcl) ;
-+------------+-----------------+-------------------------------------------------------+------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                          ;
++------------+-----------------+-------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note ;
++------------+-----------------+-------------------------------------------------------+------+
+; 148.74 MHz ; 148.74 MHz      ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ;      ;
+; 269.11 MHz ; 269.11 MHz      ; reloj                                                 ;      ;
++------------+-----------------+-------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -149,9 +147,8 @@ HTML report is unavailable in plain text report export.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -8.747 ; -218.136      ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; -2.256 ; -8.093        ;
-; reloj                                                 ; -1.467 ; -2.018        ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -5.723 ; -175.642      ;
+; reloj                                                 ; -2.716 ; -125.914      ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -160,9 +157,8 @@ HTML report is unavailable in plain text report export.
 +-------------------------------------------------------+-------+---------------+
 ; Clock                                                 ; Slack ; End Point TNS ;
 +-------------------------------------------------------+-------+---------------+
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.447 ; 0.000         ;
-; reloj                                                 ; 0.576 ; 0.000         ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0.841 ; 0.000         ;
+; reloj                                                 ; 0.383 ; 0.000         ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.441 ; 0.000         ;
 +-------------------------------------------------------+-------+---------------+
 
 
@@ -183,9 +179,8 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; reloj                                                 ; -0.882 ; -3.033        ;
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -0.394 ; -22.224       ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0.280  ; 0.000         ;
+; reloj                                                 ; -0.729 ; -34.055       ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -0.394 ; -23.786       ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -195,15 +190,14 @@ No paths to report.
 No synchronizer chains to report.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                                                                                           ;
-+------------+-----------------+-------------------------------------------------------+------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note                                                 ;
-+------------+-----------------+-------------------------------------------------------+------------------------------------------------------+
-; 104.09 MHz ; 104.09 MHz      ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ;                                                      ;
-; 322.58 MHz ; 322.58 MHz      ; moduloControladorBotones:comb_19|botonPresionado[0]   ;                                                      ;
-; 417.01 MHz ; 359.71 MHz      ; reloj                                                 ; limit due to low minimum pulse width violation (tcl) ;
-+------------+-----------------+-------------------------------------------------------+------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                           ;
++------------+-----------------+-------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                            ; Note ;
++------------+-----------------+-------------------------------------------------------+------+
+; 150.15 MHz ; 150.15 MHz      ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ;      ;
+; 256.34 MHz ; 256.34 MHz      ; reloj                                                 ;      ;
++------------+-----------------+-------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -212,9 +206,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -8.607 ; -213.896      ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; -2.100 ; -7.780        ;
-; reloj                                                 ; -1.398 ; -1.946        ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -5.881 ; -172.829      ;
+; reloj                                                 ; -2.901 ; -123.465      ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -223,9 +216,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------------------------------------------+-------+---------------+
 ; Clock                                                 ; Slack ; End Point TNS ;
 +-------------------------------------------------------+-------+---------------+
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.459 ; 0.000         ;
-; reloj                                                 ; 0.557 ; 0.000         ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0.784 ; 0.000         ;
+; reloj                                                 ; 0.403 ; 0.000         ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.454 ; 0.000         ;
 +-------------------------------------------------------+-------+---------------+
 
 
@@ -246,9 +238,8 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; reloj                                                 ; -0.890 ; -3.128        ;
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -0.394 ; -21.983       ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0.283  ; 0.000         ;
+; reloj                                                 ; -0.741 ; -37.059       ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -0.394 ; -23.626       ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -263,9 +254,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -4.857 ; -119.730      ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; -0.815 ; -2.753        ;
-; reloj                                                 ; -0.755 ; -0.785        ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -3.311 ; -97.188       ;
+; reloj                                                 ; -1.790 ; -51.219       ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -274,9 +264,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------+-------+---------------+
 ; Clock                                                 ; Slack ; End Point TNS ;
 +-------------------------------------------------------+-------+---------------+
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.162 ; 0.000         ;
-; reloj                                                 ; 0.299 ; 0.000         ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0.477 ; 0.000         ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.159 ; 0.000         ;
+; reloj                                                 ; 0.184 ; 0.000         ;
 +-------------------------------------------------------+-------+---------------+
 
 
@@ -297,9 +286,8 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; reloj                                                 ; -0.768 ; -2.366        ;
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.021  ; 0.000         ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0.352  ; 0.000         ;
+; reloj                                                 ; -0.668 ; -6.109        ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -0.079 ; -0.637        ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -314,9 +302,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -4.378 ; -106.037      ;
-; reloj                                                 ; -0.611 ; -0.611        ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; -0.596 ; -2.104        ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -2.888 ; -84.470       ;
+; reloj                                                 ; -1.675 ; -43.161       ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -325,9 +312,8 @@ No synchronizer chains to report.
 +-------------------------------------------------------+-------+---------------+
 ; Clock                                                 ; Slack ; End Point TNS ;
 +-------------------------------------------------------+-------+---------------+
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.148 ; 0.000         ;
-; reloj                                                 ; 0.266 ; 0.000         ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0.424 ; 0.000         ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.147 ; 0.000         ;
+; reloj                                                 ; 0.174 ; 0.000         ;
 +-------------------------------------------------------+-------+---------------+
 
 
@@ -348,9 +334,8 @@ No paths to report.
 +-------------------------------------------------------+--------+---------------+
 ; Clock                                                 ; Slack  ; End Point TNS ;
 +-------------------------------------------------------+--------+---------------+
-; reloj                                                 ; -0.741 ; -2.277        ;
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0.050  ; 0.000         ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0.354  ; 0.000         ;
+; reloj                                                 ; -0.656 ; -6.154        ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -0.030 ; -0.210        ;
 +-------------------------------------------------------+--------+---------------+
 
 
@@ -365,14 +350,12 @@ No synchronizer chains to report.
 +--------------------------------------------------------+----------+-------+----------+---------+---------------------+
 ; Clock                                                  ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------------------------------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                       ; -8.747   ; 0.148 ; N/A      ; N/A     ; -0.890              ;
-;  moduloControladorBotones:comb_19|botonPresionado[0]   ; -2.256   ; 0.424 ; N/A      ; N/A     ; 0.280               ;
-;  moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -8.747   ; 0.148 ; N/A      ; N/A     ; -0.394              ;
-;  reloj                                                 ; -1.467   ; 0.266 ; N/A      ; N/A     ; -0.890              ;
-; Design-wide TNS                                        ; -228.247 ; 0.0   ; 0.0      ; 0.0     ; -25.257             ;
-;  moduloControladorBotones:comb_19|botonPresionado[0]   ; -8.093   ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -218.136 ; 0.000 ; N/A      ; N/A     ; -22.224             ;
-;  reloj                                                 ; -2.018   ; 0.000 ; N/A      ; N/A     ; -3.128              ;
+; Worst-case Slack                                       ; -5.881   ; 0.147 ; N/A      ; N/A     ; -0.741              ;
+;  moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -5.881   ; 0.147 ; N/A      ; N/A     ; -0.394              ;
+;  reloj                                                 ; -2.901   ; 0.174 ; N/A      ; N/A     ; -0.741              ;
+; Design-wide TNS                                        ; -301.556 ; 0.0   ; 0.0      ; 0.0     ; -60.685             ;
+;  moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; -175.642 ; 0.000 ; N/A      ; N/A     ; -23.786             ;
+;  reloj                                                 ; -125.914 ; 0.000 ; N/A      ; N/A     ; -37.059             ;
 +--------------------------------------------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -418,12 +401,12 @@ No synchronizer chains to report.
 +----------------+--------------+-----------------+-----------------+
 ; Pin            ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +----------------+--------------+-----------------+-----------------+
-; reinicio       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; reloj          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; botonDerecha   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; botonArriba    ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; botonAbajo     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; botonIzquierda ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; botonDerecha   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reinicio       ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reloj          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 +----------------+--------------+-----------------+-----------------+
 
 
@@ -580,10 +563,9 @@ No synchronizer chains to report.
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                            ; To Clock                                              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0        ; 0        ; 0        ; 15       ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0        ; 1305     ; 0        ; 0        ;
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 509756   ; 0        ; 0        ; 0        ;
-; reloj                                                 ; reloj                                                 ; 2        ; 0        ; 0        ; 0        ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 30884    ; 0        ; 0        ; 0        ;
+; reloj                                                 ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 144      ; 0        ; 0        ; 0        ;
+; reloj                                                 ; reloj                                                 ; 1493     ; 0        ; 0        ; 0        ;
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -593,10 +575,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                            ; To Clock                                              ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; moduloControladorBotones:comb_19|botonPresionado[0]   ; 0        ; 0        ; 0        ; 15       ;
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 0        ; 1305     ; 0        ; 0        ;
-; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 509756   ; 0        ; 0        ; 0        ;
-; reloj                                                 ; reloj                                                 ; 2        ; 0        ; 0        ; 0        ;
+; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 30884    ; 0        ; 0        ; 0        ;
+; reloj                                                 ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; 144      ; 0        ; 0        ; 0        ;
+; reloj                                                 ; reloj                                                 ; 1493     ; 0        ; 0        ; 0        ;
 +-------------------------------------------------------+-------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -620,8 +601,8 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 5     ; 5    ;
-; Unconstrained Input Port Paths  ; 54    ; 54   ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 104   ; 104  ;
 ; Unconstrained Output Ports      ; 13    ; 13   ;
 ; Unconstrained Output Port Paths ; 14    ; 14   ;
 +---------------------------------+-------+------+
@@ -632,23 +613,18 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------------------------------------------------+-------------------------------------------------------+------+-------------+
 ; Target                                                ; Clock                                                 ; Type ; Status      ;
 +-------------------------------------------------------+-------------------------------------------------------+------+-------------+
-; moduloControladorBotones:comb_19|botonPresionado[0]   ; moduloControladorBotones:comb_19|botonPresionado[0]   ; Base ; Constrained ;
 ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz ; Base ; Constrained ;
 ; reloj                                                 ; reloj                                                 ; Base ; Constrained ;
 +-------------------------------------------------------+-------------------------------------------------------+------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                             ;
-+----------------+--------------------------------------------------------------------------------------+
-; Input Port     ; Comment                                                                              ;
-+----------------+--------------------------------------------------------------------------------------+
-; botonAbajo     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; botonArriba    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; botonDerecha   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; botonIzquierda ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; reinicio       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+----------------+--------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; reinicio   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -672,17 +648,13 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +--------------------------+---------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Unconstrained Input Ports                                                                             ;
-+----------------+--------------------------------------------------------------------------------------+
-; Input Port     ; Comment                                                                              ;
-+----------------+--------------------------------------------------------------------------------------+
-; botonAbajo     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; botonArriba    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; botonDerecha   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; botonIzquierda ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-; reinicio       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
-+----------------+--------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; reinicio   ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -712,128 +684,114 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Apr 04 16:45:38 2023
+    Info: Processing started: Thu May 11 07:31:13 2023
 Info: Command: quartus_sta controladorVGA -c controladorVGA
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 7 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'controladorVGA.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz
     Info (332105): create_clock -period 1.000 -name reloj reloj
-    Info (332105): create_clock -period 1.000 -name moduloControladorBotones:comb_19|botonPresionado[0] moduloControladorBotones:comb_19|botonPresionado[0]
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.747
+Info (332146): Worst-case setup slack is -5.723
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.747            -218.136 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):    -2.256              -8.093 moduloControladorBotones:comb_19|botonPresionado[0] 
-    Info (332119):    -1.467              -2.018 reloj 
-Info (332146): Worst-case hold slack is 0.447
+    Info (332119):    -5.723            -175.642 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
+    Info (332119):    -2.716            -125.914 reloj 
+Info (332146): Worst-case hold slack is 0.383
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.447               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):     0.576               0.000 reloj 
-    Info (332119):     0.841               0.000 moduloControladorBotones:comb_19|botonPresionado[0] 
+    Info (332119):     0.383               0.000 reloj 
+    Info (332119):     0.441               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.882
+Info (332146): Worst-case minimum pulse width slack is -0.729
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.882              -3.033 reloj 
-    Info (332119):    -0.394             -22.224 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):     0.280               0.000 moduloControladorBotones:comb_19|botonPresionado[0] 
+    Info (332119):    -0.729             -34.055 reloj 
+    Info (332119):    -0.394             -23.786 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -8.607
+Info (332146): Worst-case setup slack is -5.881
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -8.607            -213.896 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):    -2.100              -7.780 moduloControladorBotones:comb_19|botonPresionado[0] 
-    Info (332119):    -1.398              -1.946 reloj 
-Info (332146): Worst-case hold slack is 0.459
+    Info (332119):    -5.881            -172.829 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
+    Info (332119):    -2.901            -123.465 reloj 
+Info (332146): Worst-case hold slack is 0.403
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.459               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):     0.557               0.000 reloj 
-    Info (332119):     0.784               0.000 moduloControladorBotones:comb_19|botonPresionado[0] 
+    Info (332119):     0.403               0.000 reloj 
+    Info (332119):     0.454               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.890
+Info (332146): Worst-case minimum pulse width slack is -0.741
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.890              -3.128 reloj 
-    Info (332119):    -0.394             -21.983 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):     0.283               0.000 moduloControladorBotones:comb_19|botonPresionado[0] 
+    Info (332119):    -0.741             -37.059 reloj 
+    Info (332119):    -0.394             -23.626 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.857
+Info (332146): Worst-case setup slack is -3.311
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.857            -119.730 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):    -0.815              -2.753 moduloControladorBotones:comb_19|botonPresionado[0] 
-    Info (332119):    -0.755              -0.785 reloj 
-Info (332146): Worst-case hold slack is 0.162
+    Info (332119):    -3.311             -97.188 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
+    Info (332119):    -1.790             -51.219 reloj 
+Info (332146): Worst-case hold slack is 0.159
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.162               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):     0.299               0.000 reloj 
-    Info (332119):     0.477               0.000 moduloControladorBotones:comb_19|botonPresionado[0] 
+    Info (332119):     0.159               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
+    Info (332119):     0.184               0.000 reloj 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.768
+Info (332146): Worst-case minimum pulse width slack is -0.668
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.768              -2.366 reloj 
-    Info (332119):     0.021               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):     0.352               0.000 moduloControladorBotones:comb_19|botonPresionado[0] 
+    Info (332119):    -0.668              -6.109 reloj 
+    Info (332119):    -0.079              -0.637 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -4.378
+Info (332146): Worst-case setup slack is -2.888
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -4.378            -106.037 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):    -0.611              -0.611 reloj 
-    Info (332119):    -0.596              -2.104 moduloControladorBotones:comb_19|botonPresionado[0] 
-Info (332146): Worst-case hold slack is 0.148
+    Info (332119):    -2.888             -84.470 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
+    Info (332119):    -1.675             -43.161 reloj 
+Info (332146): Worst-case hold slack is 0.147
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.148               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):     0.266               0.000 reloj 
-    Info (332119):     0.424               0.000 moduloControladorBotones:comb_19|botonPresionado[0] 
+    Info (332119):     0.147               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
+    Info (332119):     0.174               0.000 reloj 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is -0.741
+Info (332146): Worst-case minimum pulse width slack is -0.656
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.741              -2.277 reloj 
-    Info (332119):     0.050               0.000 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
-    Info (332119):     0.354               0.000 moduloControladorBotones:comb_19|botonPresionado[0] 
+    Info (332119):    -0.656              -6.154 reloj 
+    Info (332119):    -0.030              -0.210 moduloReloj25MHz:instanciaModuloReloj25MHz|reloj25MHz 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 5196 megabytes
-    Info: Processing ended: Tue Apr 04 16:45:50 2023
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:18
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 5198 megabytes
+    Info: Processing ended: Thu May 11 07:31:27 2023
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:16
 
 

@@ -62,22 +62,6 @@
 				{
 					"name" : "reloj",
 					"strict" : false
-				},
-				{
-					"name" : "botonDerecha",
-					"strict" : false
-				},
-				{
-					"name" : "botonArriba",
-					"strict" : false
-				},
-				{
-					"name" : "botonAbajo",
-					"strict" : false
-				},
-				{
-					"name" : "botonIzquierda",
-					"strict" : false
 				}
 			]
 		}

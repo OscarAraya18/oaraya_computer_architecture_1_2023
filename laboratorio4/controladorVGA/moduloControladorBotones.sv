@@ -1,17 +1,38 @@
-module moduloControladorBotones (reloj, reinicio, botonArriba, botonAbajo, botonIzquierda, botonDerecha, botonPresionado);
+module moduloControladorBotones (reloj, reinicio, entradaBotonArriba, entradaBotonAbajo, entradaBotonIzquierda, entradaBotonDerecha, salidaBotonArriba, salidaBotonAbajo, salidaBotonIzquierda, salidaBotonDerecha);
 	input logic reloj;
 	input logic reinicio;
-	input logic botonArriba;
-	input logic botonAbajo;
-	input logic botonIzquierda;
-	input logic botonDerecha;
-	output logic [2:0] botonPresionado;
+	input logic entradaBotonArriba;
+	input logic entradaBotonAbajo;
+	input logic entradaBotonIzquierda;
+	input logic entradaBotonDerecha;
+	output logic salidaBotonArriba;
+	output logic salidaBotonAbajo;
+	output logic salidaBotonIzquierda;
+	output logic salidaBotonDerecha;
 	
-	always @(botonArriba, botonAbajo, botonIzquierda, botonDerecha) begin
-		if (botonArriba == 1'b0) botonPresionado = 3'b001;
-		else if (botonAbajo == 1'b0) botonPresionado = 3'b010;
-		else if (botonIzquierda == 1'b0) botonPresionado = 3'b011;
-		else if (botonDerecha == 1'b0) botonPresionado = 3'b100;
+	always @(posedge reloj or posedge entradaBotonArriba or posedge entradaBotonAbajo or posedge entradaBotonIzquierda or posedge entradaBotonDerecha) begin
+		if (reloj == 1'b1) begin
+			if (reinicio == 1'b1) begin
+				salidaBotonArriba <= 1'b0;
+				salidaBotonAbajo <= 1'b0;
+				salidaBotonIzquierda <= 1'b0;
+				salidaBotonDerecha <= 1'b0;
+			end
+		end 
+		if (entradaBotonArriba == 1'b1) begin
+			salidaBotonArriba <= 1'b1;
+		end
+		if (entradaBotonAbajo == 1'b1) begin
+			salidaBotonAbajo <= 1'b1;
+		end
+		if (entradaBotonIzquierda == 1'b1) begin
+			salidaBotonIzquierda <= 1'b1;
+		end
+		if (entradaBotonDerecha == 1'b1) begin
+			salidaBotonDerecha <= 1'b1;
+		end
 	end
-			
+	
+	
+	
 endmodule 
